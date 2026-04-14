@@ -1,0 +1,112 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 8 abr 2026, 20:24:14
+    Author     : alber
+*/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+body {
+    margin: 0;
+    background-image: url("fondo_cafeina_code.png");
+    background-size: cover;
+    color: white;
+    
+}
+
+
+/* MENÚ */
+.menu {
+    display: flex;
+    background-color: #2b0033;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+}
+
+.menu a {
+    font-family: "Orbitron", sans-serif;
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    padding: 8px 15px;
+    background-color: #4a00e0;
+    border-radius: 5px;
+}
+
+.menu a.activo {
+    background-color: #ff00cc;
+}
+
+.logo {
+    width: 60px;
+    
+}
+
+.perfil_pantalla {
+    max-width: 1000px;
+    margin: 50px auto;
+    padding: 20px;
+    /* Un ligero fondo oscuro para que el texto sea legible sobre la ciudad */
+    background: rgba(0, 0, 0, 0.4); 
+    border-radius: 10px;
+}
+
+.titulo_seccion {
+    font-family: "Bitcount Grid Double", system-ui; /* Fuente pixel */
+    text-align: center;
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 40px;
+    letter-spacing: 5px;
+}
+
+.perfil_layout {
+    display: flex;
+    gap: 50px;
+    align-items: flex-start;
+}
+
+/* FOTO CIRCULAR */
+.columna_foto {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+}
+
+.foto_circular {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%; /* La hace círculo perfecto */
+    border: 4px solid white;
+    object-fit: cover;
+}
+
+/* LISTA DE DATOS */
+.columna_datos {
+    flex: 2;
+    font-family: 'JetBrains Mono', monospace;
+    color: white; /* Color para las etiquetas */
+    line-height: 1.6;
+}
+
+.columna_datos p {
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+.valor {
+    color: #ffff00; /* AMARILLO para los datos del usuario */
+    font-weight: normal;
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 50px;
+    padding: 15px;
+    background-color: rgba(0,0,0,0.5);
+    text-align: center;
+}

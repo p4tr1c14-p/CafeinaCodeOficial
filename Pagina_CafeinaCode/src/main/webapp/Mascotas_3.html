@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="https://googleapis.com" rel="stylesheet">
+    <title>Mascota - Bet</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="Mascotas_3.css">
+</head>
+
+<body>
+
+    <div class="menu">
+        <img src="logo_cafeina_code.png" class="logo">
+        <a href="Inicio.html">Inicio</a>
+        <a href="Guia.html">Guía</a>
+        <a href="Challenges.html">Challenges</a>
+        <a href="Mascotas.html" class="activo">Mascota</a>
+        <a href="Perfil.html">Perfil</a>
+    </div>
+
+    <div class="contenido">
+        <div class="columna-mascota">
+            <!-- Imagen estática de Bet -->
+            <img src="final_bet.gif" class="mascota-arriba">
+
+            <h2 id="nombreMascota">Sin nombre</h2>
+
+            <form class="formulario_r" onsubmit="return false;">
+                <div class="escribir_r">
+                    <input type="text" id="nombre" placeholder="Escribe el nombre">
+                </div>
+                <button type="button" onclick="guardarNombre()">Guardar</button>
+                <button type="button" onclick="borrarNombre()" style="background: red; color: white;">Borrar Nombre</button>
+            </form>
+        </div>
+
+        <div class="frase">
+            "El esfuerzo de hoy es el éxito de mañana"
+            <br><br>
+            <div class="contenedor-racha">
+                <img src="fuego_racha.gif" class="gif-racha">
+                <span id="contadorRacha">0</span> DÍAS DE RACHA
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        Aviso de privacidad | @2025 Cafeína Code
+    </div>
+
+    <!-- Imagen de Bet caminando -->
+    <img id="mascotaCaminando" src="secuencia_bet.gif" class="mascota-caminando">
+
+    <script src="MascotasJS.js"></script>
+    <script>
+        // Forzamos que la mascota activa sea 'bet' en esta página
+        localStorage.setItem("mascota", "bet");
+    </script>
+</body>
+</html>

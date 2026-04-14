@@ -1,0 +1,110 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 6 abr 2026, 9:14:36 a.m.
+    Author     : rosa
+*/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+body {
+    margin: 0;
+    font-family: Arial;
+    background-image: url("fondo_cafeina_code.png");
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* MENÚ */
+.menu {
+    background-color: #2b0033;
+    padding: 10px;
+}
+
+.menu a {
+    font-family: "Orbitron", sans-serif;
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    padding: 8px 15px;
+    background-color: #4a00e0;
+    border-radius: 5px;
+}
+
+.menu a.activo {
+    background-color: #ff00cc;
+}
+
+.logo {
+    width: 60px;
+}
+
+/* CONTENEDOR */
+.contenedor {
+    font-family: 'Press Start 2P', cursive;
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+
+contenedor{
+    flex: 1;
+    padding: 20px;
+}
+
+.texto-boton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 12px;
+    color: black;
+
+    white-space: nowrap;
+}
+.boton-fundamentos, 
+.boton-conceptos {
+    position: relative;   
+    display: inline-block; 
+    margin: 10px;    
+    text-decoration: none;
+}
+
+/* La imagen de fondo */
+.boton {
+    width: 200px;
+    display: block;
+}
+
+.texto-boton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 8px;
+    color: black;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.boton:active {
+    transform: scale(0.95);
+}
+
+/* FOOTER */
+.footer {
+    margin-top: 50px;
+    padding: 15px;
+    background-color: rgba(0,0,0,0.5);
+}

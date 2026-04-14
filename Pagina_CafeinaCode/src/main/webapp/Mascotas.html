@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>Mascotas</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="MascotasCSS.css">
+</head>
+
+<body>
+
+    <div class="menu">
+        <img src="logo_cafeina_code.png" class="logo">
+
+        <a href="Inicio.html">Inicio</a>
+        <a href="Guia.html">Guía</a>
+        <a href="Challenges.html">Challenges</a>
+        <a href="Mascotas.html" class="activo">Mascota</a>
+        <a href="Perfil.html">Perfil</a>
+    </div>
+
+    <h1 class="titulo">ELIGE TU MASCOTA</h1>
+
+    <!-- MASCOTAS -->
+<div class="contenedor-mascotas">
+    <img src="final_pat.gif" class="mascota"
+         onclick="guardarMascota('pat'); window.location.href='Mascota_1.html'">
+    <img src="final_ros.gif" class="mascota"
+         onclick="guardarMascota('ros'); window.location.href='Mascota_2.html'">
+    <img src="final_bet.gif" class="mascota"
+         onclick="guardarMascota('bet'); window.location.href='Mascotas_3.html'">
+</div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        Aviso de privacidad | @2025 Cafeína Code
+    </div>
+
+ <script src="scriptMascota.js"></script>
+
+<script>
+    function guardarMascota(tipo) {
+        localStorage.setItem("mascota", tipo);
+    }
+</script>
+
+</body>
+</html>

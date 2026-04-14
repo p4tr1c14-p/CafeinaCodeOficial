@@ -1,0 +1,103 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 7 abr 2026, 8:36:44 a.m.
+    Author     : rosa
+*/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+body {
+    margin: 0;
+    font-family: Arial;
+    background-image: url("fondo_cafeina_code.png");
+    background-size: cover;
+    background-attachment: fixed;
+    color: white;
+    text-align: center;
+    
+    
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+/* MENÚ */
+.menu {
+    background-color: #2b0033;
+    padding: 10px;
+    font-family: Arial;
+}
+
+.menu a {
+    font-family: "Orbitron", sans-serif;
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    padding: 8px 15px;
+    background-color: #4a00e0;
+    border-radius: 5px;
+}
+
+.menu a.activo {
+    background-color: #ff00cc;
+}
+
+.logo {
+    width: 60px;
+}
+
+.logo {
+    width: 60px;
+}
+/* Botones conceptos*/
+.contenedor{
+    font-family: 'Press Start 2P', cursive;
+    display: flex;
+    font-size: 12px;
+    text-align: justify;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:15px;
+    flex: 1;
+    max-width: 600px; 
+    margin: 0 auto;
+}
+
+contenedor{
+    flex: 1;
+    padding: 20px;
+}
+.boton-regresar {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+}
+.boton {
+    width: 100%;
+    display: block;
+}
+
+/*Texto de los botones*/
+.texto-boton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    color: black;
+    font-weight: bold;
+    transform: translate(-50%, -50%); 
+}
+
+
+/* FOOTER */
+.footer {
+    margin-top: 50px;
+    padding: 15px;
+    background-color: rgba(0,0,0,0.5);
+}
