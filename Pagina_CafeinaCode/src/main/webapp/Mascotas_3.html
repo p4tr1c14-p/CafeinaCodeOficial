@@ -19,30 +19,40 @@
         <a href="Perfil.html">Perfil</a>
     </div>
 
+    
+<!-- CONTENIDO -->
     <div class="contenido">
+
         <div class="columna-mascota">
-            <!-- Imagen estática de Bet -->
+            <!-- El gif de la mascota principal -->
             <img src="final_bet.gif" class="mascota-arriba">
 
+            <!-- El nombre justo debajo del gif -->
             <h2 id="nombreMascota">Sin nombre</h2>
 
             <form class="formulario_r" onsubmit="return false;">
-                <div class="escribir_r">
-                    <input type="text" id="nombre" placeholder="Escribe el nombre">
+                <input type="text" id="nombre" placeholder="Escribe el nombre">
+                <div class="botones-fila">
+                    <button type="button" onclick="guardarNombre()">Guardar</button>
+                    <button type="button" onclick="borrarNombre()" style="background:red;">Borrar</button>
                 </div>
-                <button type="button" onclick="guardarNombre()">Guardar</button>
-                <button type="button" onclick="borrarNombre()" style="background: red; color: white;">Borrar Nombre</button>
             </form>
         </div>
 
-        <div class="frase">
-            "El esfuerzo de hoy es el éxito de mañana"
-            <br><br>
+        <div class="frase-contenedor">
+            <p class="frase">"El esfuerzo de hoy es el éxito de mañana"</p>
+
             <div class="contenedor-racha">
-                <img src="fuego_racha.gif" class="gif-racha">
-                <span id="contadorRacha">0</span> DÍAS DE RACHA
+                <div class="racha-texto">
+                    <img src="fuego_racha.gif" class="gif-racha">
+                    <span id="contadorRacha">0</span> DÍAS DE RACHA
+                </div>
+                <!-- El botón ahora está en una línea nueva gracias al CSS -->
+                <button type="button" class="btn-racha" onclick="aumentarRacha()">🔥 ¡Logro del día!</button>
             </div>
         </div>
+
+
     </div>
 
     <div class="footer">
@@ -50,12 +60,9 @@
     </div>
 
     <!-- Imagen de Bet caminando -->
-    <img id="mascotaCaminando" src="secuencia_bet.gif" class="mascota-caminando">
+    <img id="mascotaCaminando" src="" class="mascota-caminando">
 
     <script src="MascotasJS.js"></script>
-    <script>
-        // Forzamos que la mascota activa sea 'bet' en esta página
-        localStorage.setItem("mascota", "bet");
-    </script>
+    
 </body>
 </html>
