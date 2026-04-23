@@ -1,19 +1,20 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 4 abr. 2026, 18:34:19
-    Author     : patri
-*/
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+/* Corrección para que el footer siempre esté abajo */
+html, body {
+    height: 100%;
+}
+
 body {
     margin: 0;
     font-family: Arial;
     background-image: url("fondo_cafeina_code.png");
     background-size: cover;
+    background-attachment: fixed; /* Evita que el fondo se mueva */
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 
 /* MENÚ */
@@ -30,6 +31,7 @@ body {
     padding: 8px 15px;
     background-color: #4a00e0;
     border-radius: 5px;
+    display: inline-block;
 }
 
 .menu a.activo {
@@ -38,49 +40,76 @@ body {
 
 .logo {
     width: 60px;
+    vertical-align: middle;
 }
 
-/* CONTENEDOR */
+/* CONTENEDOR PRINCIPAL */
 .contenedor {
     font-family: 'Press Start 2P', cursive;
     width: 70%;
     margin: auto;
     margin-top: 30px;
+    flex: 1; /* Esto hace que el contenedor crezca y empuje el footer */
 }
 
 /* RETOS */
 .reto {
     margin-bottom: 40px;
     text-align: left;
+    background-color: rgba(0, 0, 0, 0.4); /* Fondo para que se lea mejor */
+    padding: 20px;
+    border-radius: 10px;
 }
 
 .reto h3 {
     font-size: 12px;
+    color: #00ffcc;
 }
 
 .reto p {
     font-size: 10px;
+    margin: 20px 0;
+    line-height: 1.5;
+    color: #ffeb3b; /* Amarillo para resaltar el ejercicio */
+}
+
+/* BOTÓN REFRESCAR */
+.btn-refrescar {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 8px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
     margin-bottom: 10px;
+}
+
+.btn-refrescar:hover {
+    background-color: #45a049;
 }
 
 /* CAJAS DE TEXTO */
 textarea {
     width: 100%;
-    height: 80px;
-    background-color: #5a0000;
-    border: none;
-    color: white;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
+    height: 120px; /* Un poco más alta */
+    background-color: #1a1a1a;
+    border: 2px solid white;
+    color: #00ff00;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 12px;
     padding: 10px;
+    box-sizing: border-box;
 }
 
-/* BOTÓN */
+/* BOTÓN ENVIAR */
 .boton-contenedor {
     position: relative;   
     display: block;       
     width: fit-content;   
     margin: 20px auto;    
+    text-decoration: none;
+    transition: transform 0.2s;
 }
 
 .boton {
@@ -92,26 +121,32 @@ textarea {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    
+    font-family: 'Press Start 2P', cursive;
     font-size: 12px;
     color: black;
 }
 
-/* HOVER */
 .boton-contenedor:hover {
     transform: scale(1.1);
 }
 
+/* RACHA INFO */
+.racha-info {
+    font-size: 10px;
+    margin-top: 20px;
+}
+
 .gary {
     position: fixed;
-    bottom: 20px;
+    bottom: 80px; /* Subido para que no lo tape el footer */
     right: 20px;
-    width: 120px;
+    width: 100px;
 }
 
 /* FOOTER */
 .footer {
-    margin-top: 50px;
-    padding: 15px;
-    background-color: rgba(0,0,0,0.5);
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(0,0,0,0.8);
+    font-size: 12px;
 }
