@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>CAST DE VARIABLES</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="guia6.css">
+</head>
+
+<body>
+
+    <div class="menu">
+        <img src="logo_cafeina_code.png" class="logo">
+
+        <a href="Inicio.html">Inicio</a>
+        <a href="Guia.html">Guia</a>
+        <a href="Challenges.html">Challenges</a>
+        <a href="Mascotas.html" class="activo">Mascota</a>
+        <a href="Perfil.html">Perfil</a>
+    </div>
+    
+    <div class="contenedor">
+        <h1>CASTING DE VARIABLES</h1> 
+        <p> En Java, cada variable se declara con un tipo de dato específico,el casting en Java se usa para convertir un tipo de dato en otro, en Java existen dos tipos de casting el implícito y el explícito.</p><br>
+        <h3>Casting implícito</h3>
+        <p>Sucede cuando conviertes un tipo “más pequeño” a uno “más grande”.</p>
+        <div class="codigo">
+        int numero = 10;
+        double resultado = numero;  // int → double
+        
+        System.out.println(resultado); // 10.0
+        </div>
+        <h3>Casting expícito</h3>
+        <p>Se usa cuando conviertes un tipo “más grande” a uno “más pequeño”. Aquí sí puede haber pérdida de datos.</p>
+        <div class="codigo2">
+        double numero = 9.78;
+        int resultado = (int) numero;  // double → int
+
+        System.out.println(resultado); // 9
+        </div>
+    </div>
+</body> 
+</html>

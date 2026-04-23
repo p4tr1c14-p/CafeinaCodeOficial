@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>TIPO DE VARIABLES</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="guia7.css">
+</head>
+
+<body>
+
+    <div class="menu">
+        <img src="logo_cafeina_code.png" class="logo">
+
+        <a href="Inicio.html">Inicio</a>
+        <a href="Guia.html">Guia</a>
+        <a href="Challenges.html">Challenges</a>
+        <a href="Mascotas.html" class="activo">Mascota</a>
+        <a href="Perfil.html">Perfil</a>
+    </div>    
+    
+    <div class="contenedor">
+        <h1>VARIABLES EN JAVA</h1>
+        <p>Son co­n­te­ne­do­res en los que se guardan de­te­r­mi­na­dos datos de un tipo, como números enteros, decimales, valores de verdad (verdadero  o dígitos in­di­vi­dua­les.</p>
+        <p>Las variables de Java pueden su­b­di­vi­di­r­se en tres ca­te­go­rías distintas: las variables locales, las variables de instancia y las variables estáticas.</p>
+
+        <h2>Variables locales</h2>
+        <p> Solo puede uti­li­zar­se dentro de un método, un co­n­s­tru­c­tor o un bloque.</p>
+        <h3>Ejemplo :</h3>
+        <div class="bloque-codigo">
+        public class Main {
+            public static void main(String[] args) {
+		int var = 5;
+		System.out.println("La variable local es: " + var);
+            }
+        }
+        </div>
+        <h2>Variables de instancia</h2>
+        <p> Este tipo de variable se origina cuando se crea un objeto con la palabra clave “new”. A di­fe­re­n­cia de las variables locales, las variables de instancia tienen valores por defecto.</p>
+        <h3>Ejemplo :</h3>
+
+        <div class="bloque-codigo1">
+        class Persona {
+            String nombre; // variable de instancia
+        }
+
+            public class Main {
+                public static void main(String[] args) {
+                    Persona p1 = new Persona();
+                    Persona p2 = new Persona();
+
+                    p1.nombre = "Ana";
+                    p2.nombre = "Luis";
+
+                    System.out.println(p1.nombre);
+                    System.out.println(p2.nombre);
+                }
+            }
+        </div>
+        <h3>nombre es una variable de instancia porque cada objeto (p1, p2) tiene su propio valor.</h3>
+        
+        <h2>Variables estáticas</h2>
+        <p>Se declaran fuera de un método, un co­n­s­tru­c­tor o un bloque y pertenece a la clase y no a una instancia, por lo que la comparten todas las in­s­ta­n­cias de la clase. Su asi­g­na­ción de memoria se lleva a cabo mientras se carga la clase en la memoria.</p>
+        <h3>Ejemplo :</h3>
+        
+        <div class="bloque-codigo2">
+        public class regalo {
+            public static String participante = "Pedro";
+            public static void main(String[] args) {
+		System.out.println("participante: " + regalo.participante);
+            }
+        }
+        </div>
+        
+    </div>
+</body> 
+</html>
