@@ -9,13 +9,16 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
 body {
-    margin: 0;
-    font-family: Arial;
-    background-image: url("fondo_cafeina_code.png");
+    font-family: Arial; 
+    background-image: url("imagenes/fondo_cafeina_code.png");
     background-size: cover;
     color: white;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
+
 
 /* MENÚ */
 .menu {
@@ -72,7 +75,10 @@ body {
 }
 /* FOOTER */
 .footer {
-    margin-top: 100px;
-    padding: 15px;
+    width: 100%;
+    padding: 20px 0;
     background-color: rgba(0,0,0,0.5);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    margin-top: auto;
 }
