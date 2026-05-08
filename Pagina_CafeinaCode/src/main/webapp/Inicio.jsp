@@ -16,10 +16,10 @@
     <body>
         <!-- HEADER -->
         <div class="menu">
-            <img src="logo_cafeina_code.png" class="logo">
+            <img src="imagenes/logo_cafeina_code.png" class="logo">
 
             <a href="Inicio.jsp" class="activo">Inicio</a>
-            <a href="Guia.html">Guía</a>
+            <a href="Guia.jsp">Guía</a>
             <a href="Challenges.jsp">Challenges</a>
             <a href="Mascotas.jsp">Mascotas</a>
             <a href="Perfil.jsp">Perfil</a>
@@ -42,7 +42,7 @@
                             a compañará durante tu proceso.
                         </p>
                     </div>
-                    <a href="guia2.html" class="link_boton">
+                    <a href="guia2.jsp" class="link_boton">
                         <button class="boton_texto" >¿Qué es este sitio?</button>
                     </a>
                 </div>

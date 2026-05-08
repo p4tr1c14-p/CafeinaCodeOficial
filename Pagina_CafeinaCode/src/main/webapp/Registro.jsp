@@ -18,13 +18,13 @@
         <div class="cuadro_r">
             
             <div class="cerrar">
-                <a href="index.html">
+                <a href="index.jsp">
                     <img src="cerrar.png" class="x">
                 </a>
             </div>
             
             <div class="c_logo">
-                <img src="logo_cafeina_code.png" class="logo">
+                <img src="imagenes/logo_cafeina_code.png" class="logo">
             </div>
             
             <h1 class="registro">Registro</h1>
@@ -42,16 +42,13 @@
                 </div>
                 <div class="boton-contenedor">
                     <button type="submit" style="background: none; border: none; cursor: pointer;">
-                        <img src="Boton_Naranja.png" class="boton">
+                        <img src="imagenes/Boton_Naranja.png" class="boton">
                         <span class="texto-boton">Registrarse</span>
                     </button>
                 </div>
             </form>
             
-            <p>Tu nivel actual es: ${perfil.nivel_del_curso}</p>
-<div class="barra-progreso">
-    Progreso: ${perfil.progreso}
-</div>
+            
             
         </div>
         

@@ -4,7 +4,7 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background-image: url("fondo_cafeina_code.png");
+    background-image: url("../imagenes/fondo_cafeina_code.png");
     background-size: cover;
     color: white;
     overflow-x: hidden;

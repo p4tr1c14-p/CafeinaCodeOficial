@@ -4,6 +4,15 @@
     Author     : alber
 --%>
 
+<%
+    // Si intentan entrar directo al JSP sin pasar por el Servlet, 
+    // el objeto "miPerfil" estará nulo.
+    if (request.getAttribute("miPerfil") == null) {
+        response.sendRedirect("PerfilServlet");
+        return;
+    }
+%>
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,20 +25,20 @@
     <body>
         <!-- HEADER -->
         <div class="menu">
-            <img src="logo_cafeina_code.png" class="logo">
+            <img src="${pageContext.request.contextPath}/logo_cafeina_code.png" class="logo">
 
-            <a href="Inicio.html">Inicio</a>
-            <a href="Guia.html">Guía</a>
-            <a href="Challenges.html">Challenges</a>
-            <a href="Mascotas.html">Mascotas</a>
+            <a href="Inicio.jsp">Inicio</a>
+            <a href="Guia.jsp">Guía</a>
+            <a href="Challenges.jsp">Challenges</a>
+            <a href="Mascotas.jsp">Mascotas</a>
 
             <div class="dropdown">
             <button class="btn" type="button">
               Perfil
             </button>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="Perfil.html">Ver Perfil</a></li>
-              <li><a class="dropdown-item" href="index.html">Cerrar Sesión</a></li>
+              <li><a class="dropdown-item" href="Perfil.jsp">Ver Perfil</a></li>
+              <li><a class="dropdown-item" href="index.jsp">Cerrar Sesión</a></li>
             </ul>
         </div>
         </div>
@@ -64,6 +73,7 @@
         </div>
     </div>
 </div>
+        
 
     <footer class="footer">
         Aviso de privacidad | @2025 Cafeína Code

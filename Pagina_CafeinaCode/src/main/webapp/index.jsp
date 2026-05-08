@@ -18,12 +18,12 @@
 
     <!-- HEADER -->
         <div class="menu">
-            <img src="logo_cafeina_code.png" class="logo">
+            <img src="imagenes/logo_cafeina_code.png" class="logo">
 
-            <a href="Inicio.jsp">Inicio</a>
-            <a href="Guia.html">Guía</a>
-            <a href="Challenges.html">Challenges</a>
-            <a href="Mascotas.html">Mascotas</a>
+            <a href="Registro.jsp">Inicio</a>
+            <a href="Registro.jsp">Guía</a>
+            <a href="Registro.jsp">Challenges</a>
+            <a href="Registro.jsp">Mascotas</a>
 
             <div class="dropdown">
                 <button class="btn" type="button">
@@ -45,7 +45,7 @@
 
     <div class="boton-contenedor">
         <a href="Registro.jsp" class="boton-contenedor">
-                <img src="Boton_Naranja.png" class="boton">
+                <img src="imagenes/Boton_Naranja.png" class="boton">
                 <span class="texto-boton">Empezar</span>
         </a>
     </div>

@@ -76,7 +76,7 @@ public class RegistroServlet extends HttpServlet {
     // El error ocurre porque falta este bloque try-catch
     try {
         if (dao.registrarUsuario(reg, userAlias)) {
-            response.sendRedirect("index.html?status=success");
+            response.sendRedirect("index.jsp?status=success");
         } else {
             response.sendRedirect("Registro.jsp?error=fail");
         }
