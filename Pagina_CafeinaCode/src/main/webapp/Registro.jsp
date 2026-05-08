@@ -10,7 +10,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
-        <link rel="stylesheet" href="Registro.css">
+        <link rel="stylesheet" href="css/Registro.css">
         <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
     </head>
     <body>
@@ -19,7 +19,7 @@
             
             <div class="cerrar">
                 <a href="index.jsp">
-                    <img src="cerrar.png" class="x">
+                    <img src="imagenes/cerrar.png" class="x">
                 </a>
             </div>
             

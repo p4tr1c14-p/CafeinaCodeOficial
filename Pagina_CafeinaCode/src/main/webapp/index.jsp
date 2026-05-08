@@ -20,17 +20,17 @@
         <div class="menu">
             <img src="imagenes/logo_cafeina_code.png" class="logo">
 
-            <a href="registro.jsp">Inicio</a>
-            <a href="registro.jsp">Guía</a>
-            <a href="registro.jsp">Challenges</a>
-            <a href="registro.jsp">Mascotas</a>
+            <a href="Registro.jsp">Inicio</a>
+            <a href="Registro.jsp">Guía</a>
+            <a href="Registro.jsp">Challenges</a>
+            <a href="Registro.jsp">Mascotas</a>
 
             <div class="dropdown">
                 <button class="btn" type="button">
                   Registrarse
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="registro.jsp">Registro</a></li>
+                  <li><a class="dropdown-item" href="Registro.jsp">Registro</a></li>
                   <li><a class="dropdown-item" href="Login.jsp">Login</a></li>
                 </ul>
             </div>
@@ -44,7 +44,7 @@
     </div>
 
     <div class="boton-contenedor">
-        <a href="registro.jsp" class="boton-contenedor">
+        <a href="Registro.jsp" class="boton-contenedor">
                 <img src="imagenes/Boton_Naranja.png" class="boton">
                 <span class="texto-boton">Empezar</span>
         </a>
