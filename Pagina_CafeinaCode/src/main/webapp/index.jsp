@@ -1,3 +1,10 @@
+<%-- 
+    Document   : index
+    Created on : 7 may 2026, 19:14:45
+    Author     : alber
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +20,7 @@
         <div class="menu">
             <img src="logo_cafeina_code.png" class="logo">
 
-            <a href="Inicio.html">Inicio</a>
+            <a href="Inicio.jsp">Inicio</a>
             <a href="Guia.html">Guía</a>
             <a href="Challenges.html">Challenges</a>
             <a href="Mascotas.html">Mascotas</a>

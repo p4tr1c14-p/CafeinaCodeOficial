@@ -1,17 +1,20 @@
+<%-- 
+    Document   : Registro
+    Created on : 4 may 2026, 08:58:41
+    Author     : alber
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
 <html>
     <head>
-        <title>Login</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
+        <link rel="stylesheet" href="Registro.css">
         <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="Login.css">
     </head>
     <body>
+        
         <div class="cuadro_r">
             
             <div class="cerrar">
@@ -24,23 +27,31 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 <img src="logo_cafeina_code.png" class="logo">
             </div>
             
-            <h1 class="registro">Login</h1>
+            <h1 class="registro">Registro</h1>
             
-            <form class="formulario_r" action="LoginServlet" method="POST">
+            <form class="formulario_r" action="RegistroServlet" method="POST">
+                <div class="escribir_r">
+                    <input type="text" name="nombre_usuario" placeholder="Nombre de usuario" id="user" required="">
+                </div>
                 <div class="escribir_r">
                     <input type="email" name="correo" placeholder="Correo electrónico" id="email" required="">
                 </div>
+
                 <div class="escribir_r">
                     <input type="password" name="password" placeholder="Contraseña" id="pass" required="">
                 </div>
-                
                 <div class="boton-contenedor">
                     <button type="submit" style="background: none; border: none; cursor: pointer;">
                         <img src="Boton_Naranja.png" class="boton">
-                        <span class="texto-boton">Empezar</span>
+                        <span class="texto-boton">Registrarse</span>
                     </button>
                 </div>
             </form>
+            
+            <p>Tu nivel actual es: ${perfil.nivel_del_curso}</p>
+<div class="barra-progreso">
+    Progreso: ${perfil.progreso}
+</div>
             
         </div>
         
