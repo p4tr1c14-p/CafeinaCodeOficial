@@ -3,11 +3,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
 */
 /* 
-    Created on : 2 abr. 2026, 17:37:58
+    Created on : 4 abr. 2026, 18:01:03
     Author     : patri
 */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-
 body {
     font-family: Arial; 
     background-image: url("../imagenes/fondo_cafeina_code.png");
@@ -18,7 +17,6 @@ body {
     flex-direction: column;
     min-height: 100vh;
 }
-
 
 /* MENÚ */
 .menu {
@@ -40,39 +38,85 @@ body {
     background-color: #ff00cc;
 }
 
-/* LOGO */
 .logo {
     width: 60px;
-    vertical-align: middle;
 }
 
-/* TÍTULO */
-.titulo {
-    margin-top: 40px;
-    font-size: 18px;
-    font-family: 'Press Start 2P', cursive;
-    line-height: 1.5;
-}
-
-/* MASCOTAS */
-.contenedor-mascotas {
+/* CONTENEDOR */
+.contenedor-challenges {
+    display: flex;
+    justify-content: center;
     margin-top: 50px;
+    font-family: 'Press Start 2P', cursive;
 }
 
-.mascota {
+/* CUADRO BLANCO */
+.cuadro {
+    background-image: url("../imagenes/Challenges_fondo.png");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    padding: 60px 40px;
+    width: 650px;
+    color: black;
+}
+
+/* TEXTO */
+.cuadro h1 {
+    font-size: 24px;
+}
+
+.cuadro p {
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+/* BOTÓN */
+.boton {
+    margin-top: 20px;
+    width: 200px;
     cursor: pointer;
-    transition: transform 0.3s;
-    width: 150px;
-    margin: 40px;
+    transition: transform 0.2s;
 }
 
-.mascota:hover {
+.boton:hover {
     transform: scale(1.1);
 }
 
-.contenedor-mascotas a {
+/* GIF ABAJO DERECHA */
+.gif-magia {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 120px;
+}
+
+/* CONTENEDOR DEL BOTÓN */
+.boton-contenedor {
+    position: relative;
     display: inline-block;
 }
+
+
+/* TEXTO ENCIMA */
+.texto-boton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 12px;
+    color: black;
+
+    white-space: nowrap; /*evita que se aplaste */
+}
+
+/* EFECTO HOVER */
+.boton-contenedor:hover {
+    transform: scale(1.1);
+}
+
 /* FOOTER */
 .footer {
     width: 100%;

@@ -1,0 +1,139 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 4 abr. 2026, 18:47:22
+    Author     : patri
+*/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+body {
+    font-family: 'Press Start 2P', cursive;
+    background-image: url("../imagenes/fondo_cafeina_code.png");
+    background-size: cover;
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* MENÚ */
+.menu {
+    background-color: #2b0033;
+    padding: 10px;
+    font-family: Arial;
+}
+
+.menu a {
+    font-family: "Orbitron", sans-serif;
+    color: white;
+    text-decoration: none;
+    margin: 10px;
+    padding: 8px 15px;
+    background-color: #4a00e0;
+    border-radius: 5px;
+}
+
+.menu a.activo {
+    background-color: #ff00cc;
+}
+
+.logo {
+    width: 60px;
+}
+
+/* CONTENIDO CON PIXEL */
+.contenedor {
+    width: 70%;
+    margin: auto;
+    margin-top: 40px;
+    font-family: 'Press Start 2P', cursive;
+    flex: 1;
+}
+
+/* TÍTULO */
+.contenedor h2 {
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+/* TEXTO */
+.contenedor p {
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+/* CAJA DE TEXTO */
+textarea {
+    width: 60%;
+    height: 120px;
+    margin-top: 20px;
+    background-color: #ddd;
+    border: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    padding: 10px;
+}
+
+/* BOTÓN */
+.boton-contenedor {
+    position: relative;   
+    display: block;       
+    width: fit-content;   
+    margin: 20px auto;    
+}
+
+.boton {
+    width: 200px;
+}
+
+.boton-invisible {
+font-family: 'Press Start 2P', cursive;
+background: none;
+border: none;
+padding: 0;
+cursor: pointer;
+display: block;
+margin: 0 auto;
+position: relative;
+}
+
+
+.boton-invisible:active {
+    transform: scale(0.95);
+}
+
+.texto-boton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: "Press Start 2P", cursive;
+    font-size: 12px;
+    color: black;
+    white-space: nowrap;
+}
+
+/* HOVER */
+.boton-contenedor:hover {
+    transform: scale(1.1);
+}
+
+.penguin {
+    position: fixed;
+    bottom: 80px;
+    left: 40px;
+    width: 120px;
+}
+
+/* FOOTER */
+.footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: rgba(0,0,0,0.5);
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    margin-top: auto;
+}
