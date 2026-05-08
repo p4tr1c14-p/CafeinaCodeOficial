@@ -8,12 +8,12 @@ import Modelo.Dao.PerfilDAO;
 import Modelos.Perfil;
 import java.io.IOException;
 import java.io.PrintWriter;
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
-import jakarta.servlet.http.HttpSession;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -35,7 +35,6 @@ public class PerfilServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
@@ -61,35 +60,26 @@ public class PerfilServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        // 1. Obtener la sesión actual
         HttpSession session = request.getSession();
-        
-        // 2. Recuperar el id_usuario (asumiendo que lo guardaste en LoginServlet)
-        // Si no lo tienes guardado, el perfil no sabrá de quién buscar los datos
+
         Integer idUsuario = (Integer) session.getAttribute("id_usuario");
 
-        // 2. Si no hay ID en la sesión, significa que no ha hecho login
         if (idUsuario == null) {
-            response.sendRedirect("Login.jsp"); // O tu página de inicio
+            response.sendRedirect("Login.jsp");
             return;
         }
 
-        // 3. Consultamos al DAO para traer el objeto Perfil completo
         PerfilDAO dao = new PerfilDAO();
         Perfil perfil = dao.obtenerPerfil(idUsuario);
 
         if (perfil != null) {
-            // 4. Enviamos el objeto al JSP usando un atributo
             request.setAttribute("miPerfil", perfil);
             request.getRequestDispatcher("Perfil.jsp").forward(request, response);
         } else {
-            // Caso de error: el usuario existe pero no tiene perfil (no debería pasar)
             response.sendRedirect("index.html?error=perfil_no_encontrado");
         }
     
     }
-    
-
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)

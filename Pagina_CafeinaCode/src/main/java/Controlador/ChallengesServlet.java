@@ -8,25 +8,21 @@ import java.net.URL;
 import java.sql.*;
 import java.util.Scanner;
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "ChallengeServlet", urlPatterns = {"/obtenerEjercicio", "/evaluarRespuesta"})
 public class ChallengesServlet extends HttpServlet {
 
-    private static final String DB_URL      = "jdbc:mysql://localhost:3306/cafeina_code_bd?connectTimeout=3000";
-    private static final String DB_USER     = "root";
-    private static final String DB_PASS     = "123";
-    // Cambia las constantes
-    private static final String AI_KEY = "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";
-    private static final String AI_URL = "https://openrouter.ai/api/v1/chat/completions";
+    private static final String DB_URL  = "jdbc:mysql://localhost:3306/cafeina_code?connectTimeout=3000";
+    private static final String DB_USER = "root";
+    private static final String DB_PASS = "perezcruz123#";
+    private static final String AI_KEY  = "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";
+    private static final String AI_URL  = "https://openrouter.ai/api/v1/chat/completions";
 
-// ══════════════════════════════════════════
-    // GET → devuelve un ejercicio aleatorio
-    // ══════════════════════════════════════════
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -40,15 +36,15 @@ public class ChallengesServlet extends HttpServlet {
                 DriverManager.setLoginTimeout(3);
 
                 try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
-                    String sql = "SELECT id_ejercicios, descripcion_ejercico " +
+                    String sql = "SELECT id_ejercicios_challenges, descripcion_ejercicio " +
                                  "FROM ejercicios_challenges ORDER BY RAND() LIMIT 1";
 
                     try (PreparedStatement ps = conn.prepareStatement(sql);
                          ResultSet rs = ps.executeQuery()) {
 
                         if (rs.next()) {
-                            int    id   = rs.getInt("id_ejercicios");
-                            String desc = rs.getString("descripcion_ejercico")
+                            int    id   = rs.getInt("id_ejercicios_challenges");
+                            String desc = rs.getString("descripcion_ejercicio")
                                             .replace("\"", "'")
                                             .replace("\n", " ");
                             out.print("{\"id\": " + id + ", \"ejercicio\": \"" + desc + "\"}");
@@ -68,9 +64,6 @@ public class ChallengesServlet extends HttpServlet {
         }
     }
 
-    // ══════════════════════════════════════════
-    // POST → evalúa la respuesta con Gemini
-    // ══════════════════════════════════════════
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
@@ -78,19 +71,16 @@ public class ChallengesServlet extends HttpServlet {
         response.setContentType("application/json");
         response.setCharacterEncoding("UTF-8");
 
-        // 1. Leer parámetros del formulario
         String codigo      = request.getParameter("codigo");
         String ejercicio   = request.getParameter("ejercicio");
         String idEjercicio = request.getParameter("idEjercicio");
 
-        // LOG TEMPORAL — lo verás en la consola de NetBeans
         System.out.println("=== DATOS RECIBIDOS ===");
         System.out.println("codigo: "      + codigo);
         System.out.println("ejercicio: "   + ejercicio);
         System.out.println("idEjercicio: " + idEjercicio);
         System.out.println("=======================");
 
-        // 2. Validar que llegaron los datos
         if (codigo == null || codigo.trim().isEmpty() ||
             ejercicio == null || idEjercicio == null) {
             try (PrintWriter out = response.getWriter()) {
@@ -101,34 +91,22 @@ public class ChallengesServlet extends HttpServlet {
 
         try (PrintWriter out = response.getWriter()) {
             try {
-                // 3. Llamar a Gemini
                 String resultadoIA = evaluarConOpenRouter(ejercicio, codigo);
 
-                // 4. Guardar en la base de datos
-                // 4. Guardar en la base de datos (CORREGIDO)
                 Class.forName("com.mysql.cj.jdbc.Driver");
                 try (Connection conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASS)) {
-
-                    // Añadimos 'resultado_ia' a la lista de columnas y un '?' extra
                     String sql = "INSERT INTO respuesta_usuario " +
-                                 "(id_ejercicios_challenges, codigo_respuesta, ejercicio_texto, resultado_ia, retroalimentacion) " +
-                                 "VALUES (?, ?, ?, ?, ?)";
+                                 "(id_ejercicios_challenges, codigo_respuesta, resultado_ia) " +
+                                 "VALUES (?, ?, ?)";
 
                     try (PreparedStatement ps = conn.prepareStatement(sql)) {
                         ps.setInt(1, Integer.parseInt(idEjercicio));
                         ps.setString(2, codigo);
-                        ps.setString(3, ejercicio);
-
-                        // Guardamos el texto de la IA en ambas columnas si quieres, 
-                        // o puedes separar el veredicto (CORRECTO/INCORRECTO) de la explicación.
-                        ps.setString(4, resultadoIA); 
-                        ps.setString(5, resultadoIA);
-
+                        ps.setString(3, resultadoIA);
                         ps.executeUpdate();
                     }
                 }
 
-                // 5. Responder al frontend
                 String safeResult = resultadoIA
                     .replace("\\", "\\\\")
                     .replace("\"", "'")
@@ -137,9 +115,8 @@ public class ChallengesServlet extends HttpServlet {
 
                 out.print("{\"retroalimentacion\": \"" + safeResult + "\"}");
 
-            }catch (Exception e) {
+            } catch (Exception e) {
                 System.out.println("ERROR EN DOPOST: " + e.getMessage());
-                // ✅ Solo escribir si no se escribió antes
                 if (!response.isCommitted()) {
                     com.google.gson.JsonObject jsonErr = new com.google.gson.JsonObject();
                     jsonErr.addProperty("retroalimentacion", "Error al evaluar: " + e.getMessage());
@@ -149,71 +126,63 @@ public class ChallengesServlet extends HttpServlet {
         }
     }
 
-    // ══════════════════════════════════════════
-    // Llama a Gemini API y devuelve el texto
-    // ══════════════════════════════════════════
-private String evaluarConOpenRouter(String ejercicio, String codigoUsuario) throws Exception {
-    // 1. Construir el cuerpo de la petición de forma segura con Gson
-    com.google.gson.Gson gson = new com.google.gson.Gson();
-    
-    java.util.Map<String, Object> jsonMap = new java.util.HashMap<>();
-    jsonMap.put("model", "nvidia/nemotron-3-super-120b-a12b:free");
+    private String evaluarConOpenRouter(String ejercicio, String codigoUsuario) throws Exception {
+        com.google.gson.Gson gson = new com.google.gson.Gson();
 
-    java.util.List<java.util.Map<String, String>> messages = new java.util.ArrayList<>();
-    java.util.Map<String, String> message = new java.util.HashMap<>();
-    message.put("role", "user");
-    message.put("content", "Eres un tutor de Java amigable. "
-            + "El ejercicio es: " + ejercicio + ". "
-            + "El estudiante respondió: " + codigoUsuario + ". "
-            + "Evalúa en español en máximo 2 oraciones. "
-            + "Empieza con CORRECTO, INCORRECTO o PARCIALMENTE CORRECTO.");
-    messages.add(message);
-    
-    jsonMap.put("messages", messages);
-    String body = gson.toJson(jsonMap);
+        java.util.Map<String, Object> jsonMap = new java.util.HashMap<>();
+        jsonMap.put("model", "nvidia/nemotron-3-super-120b-a12b:free");
 
-    // 2. Configurar la conexión
-    URL url = new URL(AI_URL);
-    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-    conn.setRequestMethod("POST");
-    conn.setDoOutput(true);
-    conn.setConnectTimeout(10000);
-    conn.setReadTimeout(15000);
-    conn.setRequestProperty("Content-Type", "application/json");
-    conn.setRequestProperty("Authorization", "Bearer " + AI_KEY);
+        java.util.List<java.util.Map<String, String>> messages = new java.util.ArrayList<>();
+        java.util.Map<String, String> message = new java.util.HashMap<>();
+        message.put("role", "user");
+        message.put("content", "Eres un tutor de Java amigable. "
+                + "El ejercicio es: " + ejercicio + ". "
+                + "El estudiante respondió: " + codigoUsuario + ". "
+                + "Evalúa en español en máximo 2 oraciones. "
+                + "Empieza con CORRECTO, INCORRECTO o PARCIALMENTE CORRECTO.");
+        messages.add(message);
 
-    // 3. Enviar datos
-    try (OutputStream os = conn.getOutputStream()) {
-        os.write(body.getBytes("UTF-8"));
+        jsonMap.put("messages", messages);
+        String body = gson.toJson(jsonMap);
+
+        URL url = new URL(AI_URL);
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("POST");
+        conn.setDoOutput(true);
+        conn.setConnectTimeout(10000);
+        conn.setReadTimeout(15000);
+        conn.setRequestProperty("Content-Type", "application/json");
+        conn.setRequestProperty("Authorization", "Bearer " + AI_KEY);
+
+        try (OutputStream os = conn.getOutputStream()) {
+            os.write(body.getBytes("UTF-8"));
+        }
+
+        int statusCode = conn.getResponseCode();
+        System.out.println("STATUS IA: " + statusCode);
+
+        java.io.InputStream stream = (statusCode == 200) ? conn.getInputStream() : conn.getErrorStream();
+        StringBuilder sb = new StringBuilder();
+        try (Scanner sc = new Scanner(stream, "UTF-8")) {
+            while (sc.hasNextLine()) sb.append(sc.nextLine());
+        }
+
+        String jsonResponse = sb.toString();
+        System.out.println("RESPUESTA COMPLETA IA: " + jsonResponse);
+
+        if (statusCode != 200) {
+            throw new Exception("Error IA (Status " + statusCode + "): " + jsonResponse);
+        }
+
+        try {
+            com.google.gson.JsonObject root = gson.fromJson(jsonResponse, com.google.gson.JsonObject.class);
+            return root.getAsJsonArray("choices")
+                       .get(0).getAsJsonObject()
+                       .getAsJsonObject("message")
+                       .get("content").getAsString();
+        } catch (Exception e) {
+            System.out.println("Error al parsear JSON: " + e.getMessage());
+            return "Error al procesar la respuesta de la IA.";
+        }
     }
-
-    int statusCode = conn.getResponseCode();
-    System.out.println("STATUS IA: " + statusCode);
-
-    // 4. Leer respuesta
-    java.io.InputStream stream = (statusCode == 200) ? conn.getInputStream() : conn.getErrorStream();
-    StringBuilder sb = new StringBuilder();
-    try (Scanner sc = new Scanner(stream, "UTF-8")) {
-        while (sc.hasNextLine()) sb.append(sc.nextLine());
-    }
-
-    String jsonResponse = sb.toString();
-    System.out.println("RESPUESTA COMPLETA IA: " + jsonResponse);
-
-    if (statusCode != 200) {
-        throw new Exception("Error IA (Status " + statusCode + "): " + jsonResponse);
-    }
-
-    // 5. Extraer el contenido usando Gson (Mucho más seguro)
-    try {
-        com.google.gson.JsonObject root = gson.fromJson(jsonResponse, com.google.gson.JsonObject.class);
-        return root.getAsJsonArray("choices")
-                   .get(0).getAsJsonObject()
-                   .getAsJsonObject("message")
-                   .get("content").getAsString();
-    } catch (Exception e) {
-        System.out.println("Error al parsear JSON: " + e.getMessage());
-        return "Error al procesar la respuesta de la IA.";
-    }
-}
 }

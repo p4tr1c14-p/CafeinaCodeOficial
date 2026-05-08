@@ -18,11 +18,11 @@
         <div class="menu">
             <img src="imagenes/logo_cafeina_code.png" class="logo">
 
-            <a href="Inicio.html">Inicio</a>
+            <a href="index.jsp">Inicio</a>
             <a href="Guia.html">Guía</a>
             <a href="Challenges.jsp" class="activo">Challenges</a>
             <a href="Mascotas.jsp">Mascota</a>
-            <a href="Perfil.html">Perfil</a>
+            <a href="Perfil.jsp">Perfil</a>
         </div>
 
         <!-- CONTENEDOR PRINCIPAL -->

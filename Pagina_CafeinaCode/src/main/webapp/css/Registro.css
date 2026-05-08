@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-image: url("imagenes/fondo_cafeina_code.png");
+    background-image: url("../imagenes/fondo_cafeina_code.png");
     background-size: cover;
     color: white;
     text-align: center;
