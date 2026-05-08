@@ -12,7 +12,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
 body {
     margin: 0;
-    background-image: url("imagenes/fondo_cafeina_code.png");
+    background-image: url("../imagenes/fondo_cafeina_code.png");
     background-size: cover;
     color: white;
     
