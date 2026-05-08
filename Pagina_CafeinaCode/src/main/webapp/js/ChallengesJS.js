@@ -18,7 +18,7 @@ function cargarEjercicioAleatorio() {
     if (!contenedor) return;
     contenedor.innerText = "Cargando desafío...";
 
-    fetch('obtenerEjercicio')
+    fetch('/Pagina_CafeinaCode/obtenerEjercicio')
         .then(function(response) {
             if (!response.ok) throw new Error("Error en la respuesta del servidor");
             return response.json();
@@ -55,7 +55,7 @@ function enviarRespuesta() {
     params.append("ejercicio",   ejercicioActual.texto);
     params.append("idEjercicio", ejercicioActual.id);
 
-    fetch('evaluarRespuesta', {
+    fetch('/Pagina_CafeinaCode/evaluarRespuesta', {
         method: 'POST',
         headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
         body: params.toString()
