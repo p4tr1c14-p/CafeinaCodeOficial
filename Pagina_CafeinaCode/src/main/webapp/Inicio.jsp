@@ -1,3 +1,10 @@
+<%-- 
+    Document   : Inicio
+    Created on : 7 may 2026, 19:15:18
+    Author     : alber
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -9,13 +16,13 @@
     <body>
         <!-- HEADER -->
         <div class="menu">
-            <img src="logo_cafeina_code.png" class="logo">
+            <img src="imagenes/logo_cafeina_code.png" class="logo">
 
-            <a href="Inicio.html" class="activo">Inicio</a>
-            <a href="Guia.html">Guía</a>
+            <a href="Inicio.jsp" class="activo">Inicio</a>
+            <a href="Guia.jsp">Guía</a>
             <a href="Challenges.jsp">Challenges</a>
             <a href="Mascotas.jsp">Mascotas</a>
-            <a href="Perfil.html">Perfil</a>
+            <a href="Perfil.jsp">Perfil</a>
         </div>
         
         <div class="c_principal">
@@ -35,7 +42,7 @@
                             a compañará durante tu proceso.
                         </p>
                     </div>
-                    <a href="guia2.html" class="link_boton">
+                    <a href="guia2.jsp" class="link_boton">
                         <button class="boton_texto" >¿Qué es este sitio?</button>
                     </a>
                 </div>
@@ -78,3 +85,4 @@
         
     </body>
 </html>
+

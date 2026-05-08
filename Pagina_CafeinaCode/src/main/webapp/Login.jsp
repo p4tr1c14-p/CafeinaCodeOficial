@@ -1,30 +1,34 @@
-<!DOCTYPE html>
+<%-- 
+    Document   : Login
+    Created on : 4 may 2026, 08:47:08
+    Author     : alber
+--%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
     <head>
-        <title>Registro</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>JSP Page</title>
         <link href="https://fonts.googleapis.com/css2?family=Bitcount+Grid+Double:wght@100..900&display=swap" rel="stylesheet">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="Registro.css">
+        <link rel="stylesheet" href="Login.css">
     </head>
     <body>
-        
         <div class="cuadro_r">
             
             <div class="cerrar">
-                <a href="index.html">
+                <a href="index.jsp">
                     <img src="cerrar.png" class="x">
                 </a>
             </div>
             
             <div class="c_logo">
-                <img src="logo_cafeina_code.png" class="logo">
+                <img src="imagenes/logo_cafeina_code.png" class="logo">
             </div>
             
-            <h1 class="registro">Registro</h1>
+            <h1 class="registro">Login</h1>
             
-            <form class="formulario_r" action="RegistroServlet" method="POST">
+            <form class="formulario_r" action="LoginServlet" method="POST">
                 <div class="escribir_r">
                     <input type="email" name="correo" placeholder="Correo electrónico" id="email" required="">
                 </div>
@@ -34,8 +38,8 @@
                 
                 <div class="boton-contenedor">
                     <button type="submit" style="background: none; border: none; cursor: pointer;">
-                        <img src="Boton_Naranja.png" class="boton">
-                        <span class="texto-boton">Registrarse</span>
+                        <img src="imagenes/Boton_Naranja.png" class="boton">
+                        <span class="texto-boton">Empezar</span>
                     </button>
                 </div>
             </form>

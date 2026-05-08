@@ -1,4 +1,4 @@
-package Servlets;
+package Controlador;
 
 
 import java.io.IOException;
@@ -13,6 +13,7 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import Modelo.Dao.LoginDAO;
 
 /**
  *
@@ -77,41 +78,26 @@ protected void doPost(HttpServletRequest request, HttpServletResponse response)
     // 1. Obtener datos del formulario
     String email = request.getParameter("correo"); 
     String password = request.getParameter("password");
+    
+    // DEBUG: Imprime lo que llega del formulario
+    System.out.println("Email recibido: " + email);
+    System.out.println("Password recibida: " + password);
 
-    // 2. Intentar la validación
-    try {
-        Class.forName("com.mysql.cj.jdbc.Driver");
-        // 
-        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cafeina_code", "root", "1234");
+    LoginDAO dao = new LoginDAO();
+    int idUsuario = dao.validarUsuario(email, password);
 
-        
-        String sql = "SELECT * FROM usuario WHERE correo = ? AND passsword = ?";
-        PreparedStatement ps = con.prepareStatement(sql);
-        ps.setString(1, email);
-        ps.setString(2, password);
-       
-        
-        System.out.println("DEBUG: Intento de login");
-        System.out.println("DEBUG: Correo recibido: [" + email + "]");
-        System.out.println("DEBUG: Clave recibida: [" + password + "]");
-        
-        System.out.println("Buscando a :" + email + " y contraseña:" + password);
-        ResultSet rs = ps.executeQuery();
-
-        if (rs.next()) {
-            //va a la página principal de Cafeína Code si sale bien
-            response.sendRedirect("Perfil.html");
-        } else {
-            //regresa al login con error 1
-            response.sendRedirect("index.html?error=1");
-        }
-        
-        con.close(); // Siempre es bueno cerrar la conexión
-    } catch (Exception e) {
-        // Esto saldrá en la consola de NetBeans si algo falla
-        e.printStackTrace(); 
-        response.getWriter().println("Error de conexión: " + e.getMessage());
+    if (idUsuario != -1) {
+        // Guardamos el ID en la sesión para el Perfil[cite: 1]
+        request.getSession().setAttribute("id_usuario", idUsuario);
+        response.sendRedirect("PerfilServlet"); // Redirigimos al Servlet del Perfil
+    } else {
+        //response.sendRedirect("index.html?error=1");
+        // Forzamos un mensaje directo para saber si el error es el DAO
+        response.setContentType("text/html");
+        response.getWriter().println("<h1>Error: Usuario no encontrado en la BD</h1>");
+        response.getWriter().println("<a href='index.html'>Volver</a>");
     }
+    
 }
 
     /**

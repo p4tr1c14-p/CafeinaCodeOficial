@@ -3,7 +3,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to c
 Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
 */
 /* 
-    Created on : 29 abr 2026, 08:45:35
+    Created on : 6 abr 2026, 14:32:42
     Author     : alber
 */
 @import url('https://fonts.googleapis.com/css2?family=Paprika&display=swap');
@@ -14,7 +14,7 @@ body {
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-image: url("fondo_cafeina_code.png");
+    background-image: url("imagenes/fondo_cafeina_code.png");
     background-size: cover;
     color: white;
     text-align: center;

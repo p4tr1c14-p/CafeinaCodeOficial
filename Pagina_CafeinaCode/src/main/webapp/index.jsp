@@ -1,3 +1,10 @@
+<%-- 
+    Document   : index
+    Created on : 7 may 2026, 19:14:45
+    Author     : alber
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,20 +18,20 @@
 
     <!-- HEADER -->
         <div class="menu">
-            <img src="logo_cafeina_code.png" class="logo">
+            <img src="imagenes/logo_cafeina_code.png" class="logo">
 
-            <a href="Inicio.html">Inicio</a>
-            <a href="Guia.html">Guía</a>
-            <a href="Challenges.html">Challenges</a>
-            <a href="Mascotas.html">Mascotas</a>
+            <a href="Registro.jsp">Inicio</a>
+            <a href="Registro.jsp">Guía</a>
+            <a href="Registro.jsp">Challenges</a>
+            <a href="Registro.jsp">Mascotas</a>
 
             <div class="dropdown">
                 <button class="btn" type="button">
                   Registrarse
                 </button>
                 <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="Registro.html">Registro</a></li>
-                  <li><a class="dropdown-item" href="Login.html">Login</a></li>
+                  <li><a class="dropdown-item" href="Registro.jsp">Registro</a></li>
+                  <li><a class="dropdown-item" href="Login.jsp">Login</a></li>
                 </ul>
             </div>
         </div>
@@ -37,8 +44,8 @@
     </div>
 
     <div class="boton-contenedor">
-        <a href="Registro.html" class="boton-contenedor">
-                <img src="Boton_Naranja.png" class="boton">
+        <a href="Registro.jsp" class="boton-contenedor">
+                <img src="imagenes/Boton_Naranja.png" class="boton">
                 <span class="texto-boton">Empezar</span>
         </a>
     </div>

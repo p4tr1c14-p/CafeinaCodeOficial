@@ -1,24 +1,26 @@
- /*
+/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Servlet.java to edit this template
  */
-package Servlets;
+package Controlador;
 
+import Modelo.Dao.PerfilDAO;
+import Modelos.Perfil;
 import java.io.IOException;
 import java.io.PrintWriter;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
+import jakarta.servlet.http.HttpSession;
 
 /**
  *
  * @author alber
  */
-public class RegistroServlet extends HttpServlet {
+@WebServlet(name = "PerfilServlet", urlPatterns = {"/PerfilServlet"})
+public class PerfilServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -37,10 +39,10 @@ public class RegistroServlet extends HttpServlet {
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");
-            out.println("<title>Servlet RegistroServlet</title>");
+            out.println("<title>Servlet PerfilServlet</title>");
             out.println("</head>");
             out.println("<body>");
-            out.println("<h1>Servlet RegistroServlet at " + request.getContextPath() + "</h1>");
+            out.println("<h1>Servlet PerfilServlet at " + request.getContextPath() + "</h1>");
             out.println("</body>");
             out.println("</html>");
         }
@@ -58,46 +60,48 @@ public class RegistroServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        processRequest(request, response);
+        
+        // 1. Obtener la sesión actual
+        HttpSession session = request.getSession();
+        
+        // 2. Recuperar el id_usuario (asumiendo que lo guardaste en LoginServlet)
+        // Si no lo tienes guardado, el perfil no sabrá de quién buscar los datos
+        Integer idUsuario = (Integer) session.getAttribute("id_usuario");
+
+        // 2. Si no hay ID en la sesión, significa que no ha hecho login
+        if (idUsuario == null) {
+            response.sendRedirect("Login.jsp"); // O tu página de inicio
+            return;
+        }
+
+        // 3. Consultamos al DAO para traer el objeto Perfil completo
+        PerfilDAO dao = new PerfilDAO();
+        Perfil perfil = dao.obtenerPerfil(idUsuario);
+
+        if (perfil != null) {
+            // 4. Enviamos el objeto al JSP usando un atributo
+            request.setAttribute("miPerfil", perfil);
+            request.getRequestDispatcher("Perfil.jsp").forward(request, response);
+        } else {
+            // Caso de error: el usuario existe pero no tiene perfil (no debería pasar)
+            response.sendRedirect("index.html?error=perfil_no_encontrado");
+        }
+    
     }
+    
 
     
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        String email = request.getParameter("correo");
-        String password = request.getParameter("password");
-        
-        try{
-            Class.forName("com.mysql.cj.jdbc.Driver");
-            
-            Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/cafeina_code", "root", "1234");
-            
-            String sql = "INSERT INTO usuario(correo, passsword) values(?, ?)";
-            PreparedStatement ps = con.prepareStatement(sql);
-            ps.setString(1, email);
-            ps.setString(2, password);
-            
-            System.out.println("DEBUG: Intento de registro");
-            System.out.println("DEBUG: Correo recibido: [" + email + "]");
-            System.out.println("DEBUG: Clave recibida: [" + password + "]");
-            
-            int filas_insertadas = ps.executeUpdate();
-            
-            if(filas_insertadas > 0){
-                response.sendRedirect("index.html?registroexitoso");
-            }
-            con.close();
-        } catch(Exception e){
-            response.setContentType("text/html");
-            response.getWriter().println("<h1>Error en la base de datos:</h1>");
-            response.getWriter().println("<p>" + e.getMessage() + "</p>");
-            e.printStackTrace();
-            
-            }
+        doGet(request, response);
     }
 
-    
+    /**
+     * Returns a short description of the servlet.
+     *
+     * @return a String containing servlet description
+     */
     @Override
     public String getServletInfo() {
         return "Short description";
