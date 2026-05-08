@@ -11,7 +11,7 @@
         <div class="cuadro_r">
 
             <div class="btn-cerrar">
-                <a href="Inicio.jsp">
+                <a href="index.jsp">
                     <img src="imagenes/cerrar.png" class="cerrar">
                 </a>
             </div>
