@@ -6,12 +6,11 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     Created on : 7 abr 2026, 8:38:32 a.m.
     Author     : rosa
 */
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body {
     margin: 0;
     font-family: Arial;
-    background-image: url("fondo_cafeina_code.png");
+    background-image: url("../imagenes/fondo_cafeina_code.png");
     background-size: cover;
     background-attachment: fixed;
     color: white;
@@ -46,47 +45,70 @@ body {
 .logo {
     width: 50px;
 }
-.contenedor{
-    font-family: 'Press Start 2P', cursive;
-    display: flex;
-    font-size: 12px;
-    text-align: justify;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap:15px;
-    flex: 1;
-    max-width: 600px; 
-    margin: 0 auto;
-}
 
-contenedor{
-    flex: 1;
-    padding: 20px;
+.contenedor {
+    /* Tipografía y Texto */
+    font-family: 'Press Start 2P', cursive;
+    font-size: 12px;
+    line-height: 1.8; 
+    color: #333;
+    text-align: left; 
+
+    /* Caja Blanca */
+    background-color: #ffffff;
+    border: 2px solid #000000; 
+    border-radius: 8px;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
+    
+    max-width: 650px; 
+    margin: 20px auto;
+    padding: 30px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 .boton-fundamentos {
-    display: block;
+    position: relative;
     width: 200px;
     margin: 0 auto;
-    align-items: center;
+    display: block;
     text-decoration: none;
-    position: relative;
 }
-.boton {
+.img-boton {
     width: 100%;
+    height: auto;
     display: block;
 }
-
 .texto-boton {
     position: absolute;
     top: 50%;
     left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 100%;
     text-align: center;
-    color: black;
     font-weight: bold;
-    transform: translate(-50%, -50%); 
+    color: black;
+    pointer-events: none;
 }
-
+.boton {
+    width: 200px;
+    height: auto;
+    display: block;
+}
+.texto-boton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    pointer-events: none;
+}
 /* FOOTER */
 .footer {
     margin-top: 50px;

@@ -20,7 +20,7 @@
                 <img src="imagenes/logo_cafeina_code.png" class="logo">
             </div>
 
-            <h1 class="registro">Login</h1>
+            <h1 class="Registro">Login</h1>
 
             <form class="formulario_r" action="LoginServlet" method="POST">
                 <div class="escribir_r">

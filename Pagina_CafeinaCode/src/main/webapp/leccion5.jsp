@@ -1,29 +1,37 @@
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
--->
 <html>
 <head>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-    <title>ARREGLOS</title>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="guia5.css">
+    <title>Tipos de Variables</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/leccion5.css">
 </head>
+    <%
+        String mensaje = (String) session.getAttribute("mensajeExito");
+        if (mensaje != null) {
+    %>
 
+    <div class="mensaje">
+        <%= mensaje %>
+    </div>
+
+    <%
+            session.removeAttribute("mensajeExito");
+        }
+    %>
 <body>
 
     <div class="menu">
-        <img src="logo_cafeina_code.png" class="logo">
+        <img src="${pageContext.request.contextPath}/imagenes/logo_cafeina_code.png" class="logo">
 
-        <a href="Inicio.jsp">Inicio</a>
-        <a href="Guia.jsp">Guia</a>
-        <a href="Challenges.jsp">Challenges</a>
-        <a href="Mascotas.jsp" class="activo">Mascota</a>
-        <a href="Perfil.jsp">Perfil</a>
-    </div>    
+        <a href="${pageContext.request.contextPath}/index.jsp">Inicio</a>
+        <a href="${pageContext.request.contextPath}/VistasLecciones/leccion.jsp">Lecciones</a>
+        <a href="${pageContext.request.contextPath}/Challenges.jsp">Challenges</a>
+        <a href="${pageContext.request.contextPath}/Mascotas.jsp">Mascota</a>
+        <a href="${pageContext.request.contextPath}/Perfil.jsp">Perfil</a>
+    </div> 
     
-    <div class="contenedor">
+     <div class="contenedor">
         <h1>¿Qué es un arreglo en Java?</h1>
         
         <p>Los arreglos en Java son un tipo de contenedor, donde se pueden almacenar múltiples elementos de forma secuencial, siempre que sean del mismo tipo.</p>
@@ -45,10 +53,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
         <br>puntajes[0] = 100; // Primer espacio<br>
         puntajes[1] = 85;  // Segundo espacio<br>
         puntajes[2] = 92;  // Tercer y último espacio<br>
-        System.out.println("El primer puntaje es: " + puntajes[0]);
-        </div>
-        
+        System.out.println("El primer puntaje es: " + puntajes[0]);         
     </div>
+    <a href="${pageContext.request.contextPath}/leccion4.jsp" class="boton-fundamentos">    
+    <img src="${pageContext.request.contextPath}/imagenes/Boton_Naranja.png" class="boton">
+    <span class="texto-boton">REGRESAR</span>
+    </a>  
+</div>
     
 </body> 
 </html>

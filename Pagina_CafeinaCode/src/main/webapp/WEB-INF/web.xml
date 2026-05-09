@@ -16,6 +16,10 @@
         <servlet-name>PerfilServlet</servlet-name>
         <servlet-class>Controlador.PerfilServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>LeccionesNewServlet</servlet-name>
+        <servlet-class>Controlador.LeccionesServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>ChallengeServlet</servlet-name>
         <url-pattern>/obtenerEjercicio</url-pattern>
@@ -35,6 +39,10 @@
     <servlet-mapping>
         <servlet-name>PerfilServlet</servlet-name>
         <url-pattern>/PerfilServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LeccionesNewServlet</servlet-name>
+        <url-pattern>/LeccionesNewServlet</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
