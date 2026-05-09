@@ -11,7 +11,7 @@
         <div class="menu">
             <img src="imagenes/logo_cafeina_code.png" class="logo">
             <a href="index.jsp">Inicio</a>
-            <a href="Guia.jsp">Guía</a>
+            <a href="lecciones.jsp">Guía</a>
             <a href="Challenges.jsp" class="activo">Challenges</a>
             <a href="Mascotas.jsp">Mascota</a>
             <a href="Perfil.jsp">Perfil</a>

@@ -1,18 +1,16 @@
 /*
 Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
 */
 /* 
-    Created on : 23 abr. 2026, 16:01:51
-    Author     : Dell
+    Created on : 6 abr 2026, 9:14:36 a.m.
+    Author     : rosa
 */
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body {
     margin: 0;
     font-family: Arial;
-    background-image: url("fondo_cafeina_code.png");
+    background-image: url("../imagenes/fondo_cafeina_code.png");
     background-size: cover;
     background-attachment: fixed;
     color: white;
@@ -45,14 +43,23 @@ body {
 }
 
 .logo {
+    width: 50px;
+}
+
+.logo {
     width: 60px;
 }
 
-.imprimir{
-    position: fixed;
-    bottom: 40px;
-    left: 40px;
-    width: 120px;
+/* CONTENEDOR */
+.contenedor {
+    font-family: 'Press Start 2P', cursive;
+    width: 70%;
+    margin: auto;
+    margin-top: 20px;
+    padding: 20px;
+    flex: 1;
+    text-align: left;
+
 }
 
 .contenedor {
@@ -72,23 +79,50 @@ body {
     max-width: 650px; 
     margin: 20px auto;
     padding: 30px;
-
+    margin-top: 20px;
+    padding: 20px;
+    flex: 1;
+    text-align: justify;
     display: flex;
     flex-direction: column;
     gap: 20px;
+    align-items: center;
+}
+form {
+    display: inline-block;
+    margin: 0;
+    padding: 0;
+}
+.boton-fundamentos, 
+.boton-conceptos {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
 }
 
-.codigo, .codigo2{
-    background-color: buttonface;
-    padding: 5px;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    color: green;
+/* La imagen de fondo */
+.boton {
+    width: 200px;
     display: block;
-    width: 80%;
-    margin: 10px auto;
-    text-align: center;
+}
+
+.texto-boton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    font-size: 8px;
+    color: black;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.boton:active {
+    transform: scale(0.95);
 }
 
 /* FOOTER */

@@ -9,11 +9,11 @@ import java.sql.*;
 import java.util.Scanner;
 
 
-import jakarta.servlet.ServletException;
-import jakarta.servlet.annotation.WebServlet;
-import jakarta.servlet.http.HttpServlet;
-import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "ChallengeServlet", urlPatterns = {"/obtenerEjercicio", "/evaluarRespuesta"})
 public class ChallengesServlet extends HttpServlet {
@@ -21,7 +21,7 @@ public class ChallengesServlet extends HttpServlet {
     private static final String DB_URL  = "jdbc:mysql://localhost:3306/cafeina_code?connectTimeout=3000";
     private static final String DB_USER = "root";
     private static final String DB_PASS = "perezcruz123#";
-    private static final String AI_KEY  = "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";
+    private static final String AI_KEY  = "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";
     private static final String AI_URL  = "https://openrouter.ai/api/v1/chat/completions";
 
     @Override

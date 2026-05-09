@@ -1,18 +1,8 @@
-/*
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
-*/
-/* 
-    Created on : 23 abr. 2026, 16:02:11
-    Author     : Dell
-*/
-
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 body {
     margin: 0;
     font-family: Arial;
-    background-image: url("fondo_cafeina_code.png");
+    background-image: url("../imagenes/fondo_cafeina_code.png");
     background-size: cover;
     background-attachment: fixed;
     color: white;
@@ -48,20 +38,13 @@ body {
     width: 60px;
 }
 
-.imprimir{
-    position: fixed;
-    bottom: 40px;
-    left: 40px;
-    width: 120px;
-}
-
 .contenedor {
     /* Tipografía y Texto */
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
     line-height: 1.8; 
     color: #333;
-    text-align: left; 
+    text-align: justify; 
 
     /* Caja Blanca */
     background-color: #ffffff;
@@ -78,7 +61,7 @@ body {
     gap: 20px;
 }
 
-.bloque-codigo {
+.arreglos{
     background-color: buttonface;
     padding: 5px;
     border-radius: 4px;
@@ -86,30 +69,67 @@ body {
     font-weight: bold;
     color: green;
     display: block;
-    width: 55%;
+    width: 80%;
     margin: 10px auto;
+    text-align: center;
 }
-.bloque-codigo1{
-    background-color: buttonface;
-    padding: 5px;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    color: green;
+.boton-fundamentos {
     display: block;
-    width: 60%;
-    margin: 10px auto;
+    width: 200px;
+    margin: 0 auto;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
 }
-.bloque-codigo2{
-    background-color: buttonface;
-    padding: 5px;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    color: green;
+.boton {
+    width: 200px;
+    height: auto;
     display: block;
-    width: 55%;
-    margin: 10px auto;
+}
+.texto-boton {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 200px;
+    text-align: center;
+    font-weight: bold;
+    color: black;
+    pointer-events: none;
+}
+.mensaje{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+
+    background: linear-gradient(135deg, #00c853, #64dd17);
+    color: black;
+    padding: 15px 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    z-index: 9999;
+
+    opacity: 0;
+    transform: translateY(20px);
+
+    animation: aparecer 0.5s ease forwards,
+               desaparecer 0.5s ease 3s forwards;
+}
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes desaparecer {
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
 }
 /* FOOTER */
 .footer {

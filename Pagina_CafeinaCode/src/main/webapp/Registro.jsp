@@ -27,7 +27,7 @@
                 <img src="imagenes/logo_cafeina_code.png" class="logo">
             </div>
             
-            <h1 class="registro">Registro</h1>
+            <h1 class="Registro">Registro</h1>
             
             <form class="formulario_r" action="RegistroServlet" method="POST">
                 <div class="escribir_r">
