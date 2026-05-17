@@ -11,6 +11,7 @@
         <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
         <title>Mascotas</title>
         <link rel="stylesheet" href="css/MascotasCSS.css">
+        <script src="js/mascota-caminando.js"></script>
     </head>
 
     <body>
