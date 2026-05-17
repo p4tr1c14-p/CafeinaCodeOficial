@@ -1,8 +1,3 @@
-<%--
-    Document   : Challenges_1
-    Created on : 30 abr. 2026, 17:42:06
-    Author     : Dell
---%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -16,12 +11,11 @@
         <div class="menu">
             <img src="imagenes/logo_cafeina_code.png" class="logo">
             <a href="Inicio.jsp">Inicio</a>
-            <a href="lecciones.jsp">Guía</a>
+            <a href="lecciones">Guía</a>
             <a href="Challenges.jsp" class="activo">Challenges</a>
             <a href="Mascotas.jsp">Mascota</a>
             <a href="Perfil.jsp">Perfil</a>
         </div>
-
         <div class="contenedor">
             <div class="reto">
                 <h3 id="tituloReto">Desafío Java Aleatorio</h3>
@@ -31,14 +25,10 @@
                 <p id="descripcionEjercicio">Conectando con la base de datos... ☕</p>
                 <textarea id="codigoUsuario" placeholder="Escribe tu código Java aquí..."></textarea>
             </div>
-
-            <!-- BOTÓN ENVIAR -->
             <button class="boton-contenedor" onclick="enviarRespuesta()">
                 <img src="imagenes/Boton_Naranja.png" class="boton">
                 <span class="texto-boton">ENVIAR</span>
             </button>
-
-            <!-- BOTÓN SIGUIENTE - aparece después de enviar -->
             <div id="btn-siguiente-wrapper" class="btn-siguiente-wrapper" style="display:none;">
                 <p class="siguiente-texto">¿Listo para terminar?</p>
                 <a href="Challenges_2.jsp" class="btn-siguiente">
@@ -46,17 +36,13 @@
                 </a>
             </div>
         </div>
-
         <img src="imagenes/Gif_Gary.gif" class="gary">
-        <img id="mascotaCaminando" src="" class="mascota-caminando">
-
         <div class="footer">
             Aviso de privacidad | @2026 Cafeína Code
         </div>
-
         <script src="js/MascotasJS.js"></script>
         <script src="js/ChallengesJS.js"></script>
-
+        <script src="js/mascota-caminando.js"></script>
         <script>
             window.addEventListener('load', function () {
                 const originalEnviar = window.enviarRespuesta;
