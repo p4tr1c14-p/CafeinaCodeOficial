@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Modelo.Dao;
 
 import Configuracion.Conexion;
@@ -15,21 +11,19 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class LeccionesDAO {
+
     public void insertar(Lecciones l) {
-    Connection con = Conexion.conectar();
-    String sql = "INSERT INTO lecciones (nombre_leccion,descripcion) VALUES (?,?)";
+        Connection con = Conexion.conectar();
+        String sql = "INSERT INTO lecciones (nombre_leccion,descripcion) VALUES (?,?)";
         try {
             PreparedStatement ps = con.prepareStatement(sql);
             ps.setString(1, l.getNombre_leccion());
             ps.setString(2, l.getDescripcion());
-
             ps.executeUpdate();
-            System.out.println("INSERT EXITOSO");
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
-}
+    }
 
     public List<Lecciones> listar() {
         List<Lecciones> lista = new ArrayList<>();
@@ -49,7 +43,6 @@ public class LeccionesDAO {
         }
         return lista;
     }
-    
 
     public Lecciones obtenerPorId(int id) {
         Lecciones l = null;
@@ -71,11 +64,11 @@ public class LeccionesDAO {
     }
 
     public void actualizar(Lecciones l) {
-        String sql = "UPDATE lecciones SET nombre_leccion=?, descripcion =? WHERE id_lecciones=?";
+        String sql = "UPDATE lecciones SET nombre_leccion=?, descripcion=? WHERE id_lecciones=?";
         try (Connection con = Conexion.conectar();
              PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setString(1, l.getNombre_leccion());
-            ps.setString(2, l.getDescripcion());            
+            ps.setString(2, l.getDescripcion());
             ps.setInt(3, l.getId());
             ps.executeUpdate();
         } catch (Exception e) {
@@ -88,6 +81,18 @@ public class LeccionesDAO {
         try (Connection con = Conexion.conectar();
              PreparedStatement ps = con.prepareStatement(sql)) {
             ps.setInt(1, id);
+            ps.executeUpdate();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void actualizarRacha(int idUsuario) {
+        String sql = "UPDATE mascota SET racha = racha + 1, ultima_racha = CURDATE() " +
+                     "WHERE id_mascota = ? AND (ultima_racha IS NULL OR ultima_racha < CURDATE())";
+        try (Connection con = Conexion.conectar();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+            ps.setInt(1, idUsuario);
             ps.executeUpdate();
         } catch (Exception e) {
             e.printStackTrace();
