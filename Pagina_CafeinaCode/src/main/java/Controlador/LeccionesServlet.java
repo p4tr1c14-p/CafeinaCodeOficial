@@ -24,11 +24,9 @@ public class LeccionesServlet extends HttpServlet {
         switch (accion) {
 
             case "listar":
-                Object idSesion = request.getSession().getAttribute("id_usuario");
-                if (idSesion != null) {
-                    dao.actualizarRacha((int) idSesion);
-                }
+
                 request.setAttribute("lista", dao.listar());
+
                 request.getRequestDispatcher("/lecciones.jsp")
                        .forward(request, response);
                 return;
@@ -53,55 +51,80 @@ public class LeccionesServlet extends HttpServlet {
         if ("guardar".equals(accion)) {
 
             Lecciones l = new Lecciones();
+
             String idTema = request.getParameter("id_tema");
             String descripcion = request.getParameter("descripcion");
+
             String nombreTema = "";
             String destino = "";
             String mensaje = "";
 
             if (idTema != null) {
+
                 switch (idTema) {
+
                     case "1":
                         nombreTema = "FUNDAMENTOS DE JAVA";
                         destino = "/leccion3.jsp";
                         mensaje = "🎉 ¡Felicidades acompletaste un 20% de tu lección!";
                         break;
+
                     case "2":
                         nombreTema = "CONCEPTOS BÁSICOS";
                         destino = "/leccion4.jsp";
                         mensaje = "🎉 ¡Felicidades acompletaste un 16.66% de tu lección!";
                         break;
+
                     case "3":
                         nombreTema = "ARREGLOS";
                         destino = "/leccion5.jsp";
                         mensaje = "🎉 ¡Felicidades acompletaste un 20% de tu lección!";
                         break;
+
                     case "4":
                         nombreTema = "CAST DE VARIABLES";
                         destino = "/leccion6.jsp";
+                        mensaje = "🎉 ¡Felicidades acompletaste un 20% de tu lección!";
                         break;
+
                     case "5":
                         nombreTema = "TIPO DE VARIABLES";
                         destino = "/leccion7.jsp";
                         mensaje = "🎉 ¡Felicidades acompletaste un 20% de tu lección!";
                         break;
+
                     case "6":
                         nombreTema = "CLASES DE OPERADORES";
                         destino = "/leccion8.jsp";
                         mensaje = "🎉 ¡Felicidades completaste el 100% de tus lecciones, ahora continua con tus ejercicios!";
                         break;
+
                     default:
                         destino = "/lecciones.jsp";
                         break;
                 }
+
             } else {
                 destino = "/lecciones.jsp";
             }
 
             l.setNombre_leccion(nombreTema);
             l.setDescripcion(descripcion);
+
+            // Guardar lección
             dao.insertar(l);
+
+            // Actualizar racha
+            Object idSesion = request.getSession().getAttribute("id_usuario");
+
+            if (idSesion != null) {
+                dao.actualizarRacha((int) idSesion);
+            }
+
+            // Mensaje
             request.getSession().setAttribute("mensajeExito", mensaje);
+
+            // Redirección
             response.sendRedirect(request.getContextPath() + destino);
         }
     }

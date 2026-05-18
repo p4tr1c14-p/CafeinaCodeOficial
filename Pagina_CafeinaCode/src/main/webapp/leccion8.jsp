@@ -6,6 +6,19 @@
     <title>Clases de Operadores</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/leccion8.css">
 </head>
+    <%
+        String mensaje = (String) session.getAttribute("mensajeExito");
+        if (mensaje != null) {
+    %>
+
+    <div class="mensaje">
+        <%= mensaje %>
+    </div>
+
+    <%
+            session.removeAttribute("mensajeExito");
+        }
+    %>
 <body>
     <div class="menu">
         <img src="${pageContext.request.contextPath}/imagenes/logo_cafeina_code.png" class="logo">
