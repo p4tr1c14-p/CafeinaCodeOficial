@@ -37,4 +37,25 @@ public class PerfilDAO {
     } catch (Exception e) { e.printStackTrace(); }
     return p;
 }
+    
+    public boolean actualizarPerfil(int idUsuario, String pais, String sobreMi, String redes, String lenguajesconocidos) {
+    String sql = "UPDATE perfil SET pais = ?, sobre_mi = ?, redes_sociales = ?, lenguajes_conocidos = ? WHERE id_usuario = ?";
+    
+    try (Connection con = Conexion.conectar(); // O tu método de conexión correspondiente
+         PreparedStatement ps = con.prepareStatement(sql)) {
+        
+        ps.setString(1, pais);
+        ps.setString(2, sobreMi);
+        ps.setString(3, redes);
+        ps.setString(4, lenguajesconocidos);
+        ps.setInt(5, idUsuario);
+        
+        int filasAfectadas = ps.executeUpdate();
+        return filasAfectadas > 0;
+        
+    } catch (Exception e) {
+        e.printStackTrace();
+        return false;
+    }
+}
 }
