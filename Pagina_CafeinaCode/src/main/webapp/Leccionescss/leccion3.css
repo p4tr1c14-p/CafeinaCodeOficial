@@ -1,7 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;700&display=swap');body {
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this template
+*/
+/* 
+    Created on : 7 abr 2026, 8:36:44 a.m.
+    Author     : rosa
+*/
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+body {
     margin: 0;
-    font-family: 'Press Start 2P', cursive;
-    background-image: url("../imagenes/fondo_cafeina_code.png");
+    font-family: Arial;
+    background-image: url("fondo_cafeina_code.png");
     background-size: cover;
     background-attachment: fixed;
     color: white;
@@ -16,11 +25,11 @@
 .menu {
     background-color: #2b0033;
     padding: 10px;
-    font-family: 'Press Start 2P', cursive;
+    font-family: Arial;
 }
 
 .menu a {
-    font-family:'Press Start 2P', cursive;
+    font-family: "Orbitron", sans-serif;
     color: white;
     text-decoration: none;
     margin: 10px;
@@ -32,68 +41,45 @@
 .menu a.activo {
     background-color: #ff00cc;
 }
-
 .logo {
     width: 60px;
 }
 
-.imprimir{
-    position: fixed;
-    bottom: 40px;
-    left: 40px;
-    width: 120px;
+.logo {
+    width: 60px;
 }
-code {
-    background: rgba(0,0,0,0.4);
-    padding: 3px 6px;
-    border-radius: 5px;
-    color: #00ffcc;
-}
-.contenedor h1, .contenedor h2 {
-    text-align: center;
-    color: #ffccff;
-    text-shadow: 0 0 10px rgba(255,0,204,0.6);
-}
+/* Botones conceptos*/
 .contenedor {
-    position: relative;
-    width: 75%;
-    max-width: 750px;
-    margin: 40px auto;
-    padding: 35px;
-    border-radius: 20px;
-
+    /* Tipografía y Texto */
     font-family: 'Press Start 2P', cursive;
     font-size: 12px;
-    line-height: 2;
+    line-height: 1.8; 
+    color: #333;
+    text-align: justify; 
 
-    color: white;
-    text-align: left;
+    /* Caja Blanca */
+    background-color: #ffffff;
+    border: 2px solid #000000; 
+    border-radius: 8px;
+    box-shadow: 6px 6px 0px rgba(0, 0, 0, 0.1);
+    
+    max-width: 650px; 
+    margin: 20px auto;
+    padding: 30px;
 
     display: flex;
     flex-direction: column;
-    gap: 30px;
-    
-    background: rgba(255,255,255,0.08);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(255,255,255,0.2);
-    box-shadow:
-        0 0 20px rgba(255,0,200,0.25),
-        0 0 40px rgba(74,0,224,0.15);
-
-    animation: aparecer 0.8s ease;
-
+    gap: 20px;
 }
-
 .boton-fundamentos {
-    display: block;
+    position: relative;
     width: 200px;
     margin: 0 auto;
-    align-items: center;
+    display: block;
     text-decoration: none;
-    position: relative;
 }
-.boton {
-    width: 200px;
+.img-boton {
+    width: 100%;
     height: auto;
     display: block;
 }
@@ -109,17 +95,12 @@ code {
     color: black;
     pointer-events: none;
 }
-
-.boton-fundamentos:hover {
-    transform: scale(1.05) translateY(-5px);
-    filter: brightness(1.1);
-}
 .mensaje{
     position: fixed;
     bottom: 20px;
     right: 20px;
 
-    background: linear-gradient(135deg,#f9e0e0, #ffece3);
+    background: linear-gradient(135deg, #00c853, #64dd17);
     color: black;
     padding: 15px 20px;
     border-radius: 12px;
@@ -134,17 +115,7 @@ code {
     animation: aparecer 0.5s ease forwards,
                desaparecer 0.5s ease 3s forwards;
 }
-.contenedor ul {
-    list-style: none;
-    padding: 0;
-}
 
-.contenedor li {
-    background: rgba(0,0,0,0.25);
-    margin: 8px 0;
-    padding: 10px;
-    border-radius: 8px;
-}
 @keyframes aparecer {
     to {
         opacity: 1;

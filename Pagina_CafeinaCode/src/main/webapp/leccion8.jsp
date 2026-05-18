@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Clases de Operadores</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/leccion4.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/leccion8.css">
 </head>
 <body>
     <div class="menu">
@@ -23,35 +23,42 @@
 
         <h2>OPERADORES ARITMÉTICOS</h2>
         <p>Se usan para realizar operaciones matemáticas básicas:</p>
-        <p>• <strong>+</strong> Suma: <code>a + b</code></p>
-        <p>• <strong>-</strong> Resta: <code>a - b</code></p>
-        <p>• <strong>*</strong> Multiplicación: <code>a * b</code></p>
-        <p>• <strong>/</strong> División: <code>a / b</code></p>
-        <p>• <strong>%</strong> Módulo (residuo): <code>a % b</code></p>
+        <ul>
+            <li><strong>+</strong> Suma: <code>a + b</code></li>
+            <li><strong>-</strong> Resta: <code>a - b</code></li>
+            <li><strong>*</strong> Multiplicación: <code>a * b</code></li>
+            <li><strong>/</strong> División: <code>a / b</code></li>
+            <li><strong>%</strong> Módulo: <code>a % b</code></li>
+        </ul>
 
         <h2>OPERADORES RELACIONALES</h2>
         <p>Comparan dos valores y devuelven un resultado booleano (true o false):</p>
-        <p>• <strong>==</strong> Igual a</p>
-        <p>• <strong>!=</strong> Diferente de</p>
-        <p>• <strong>&gt;</strong> Mayor que</p>
-        <p>• <strong>&lt;</strong> Menor que</p>
-        <p>• <strong>&gt;=</strong> Mayor o igual que</p>
-        <p>• <strong>&lt;=</strong> Menor o igual que</p>
+        <ul>
+            <li><strong>==</strong> Igual a</li>
+            <li><strong>!=</strong> Diferente de</li>
+            <li><strong>&gt;</strong> Mayor que</li>
+            <li><strong>&lt;</strong> Menor que</li>
+            <li><strong>&gt;=</strong> Mayor o igual que</li>
+            <li><strong>&lt;=</strong> Menor o igual que</li>
+        </ul>
 
         <h2>OPERADORES LÓGICOS</h2>
         <p>Se usan para combinar expresiones booleanas:</p>
-        <p>• <strong>&amp;&amp;</strong> AND lógico: ambas condiciones deben ser verdaderas</p>
-        <p>• <strong>||</strong> OR lógico: al menos una condición debe ser verdadera</p>
-        <p>• <strong>!</strong> NOT lógico: invierte el valor booleano</p>
+        <ul>
+            <li><strong>&amp;&amp;</strong> AND lógico: ambas condiciones deben ser verdaderas</li>
+            <li><strong>||</strong> OR lógico: al menos una condición debe ser verdadera</li>
+            <li><strong>!</strong> NOT lógico: invierte el valor booleano</li>
+        </ul>
 
         <h2>OPERADORES DE ASIGNACIÓN</h2>
         <p>Asignan valores a variables:</p>
-        <p>• <strong>=</strong> Asignación simple: <code>a = 5</code></p>
-        <p>• <strong>+=</strong> Suma y asigna: <code>a += 3</code> equivale a <code>a = a + 3</code></p>
-        <p>• <strong>-=</strong> Resta y asigna: <code>a -= 3</code></p>
-        <p>• <strong>*=</strong> Multiplica y asigna: <code>a *= 3</code></p>
-        <p>• <strong>/=</strong> Divide y asigna: <code>a /= 3</code></p>
-
+        <ul>
+            <li><strong>=</strong> Asignación simple: <code>a = 5</code></li>
+            <li><strong>+=</strong> Suma y asigna: <code>a += 3</code> equivale a <code>a = a + 3</code></li>
+            <li><strong>-=</strong> Resta y asigna: <code>a -= 3</code></li>
+            <li><strong>*=</strong> Multiplica y asigna: <code>a *= 3</code></li>
+            <li><strong>/=</strong> Divide y asigna: <code>a /= 3</code></li>
+        </ul>
         <a href="${pageContext.request.contextPath}/lecciones.jsp" class="boton-fundamentos">
             <img src="${pageContext.request.contextPath}/imagenes/Boton_Naranja.png" class="boton">
             <span class="texto-boton">REGRESAR</span>
