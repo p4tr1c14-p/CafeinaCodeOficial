@@ -17,7 +17,7 @@ public class Conexion {
     private static final String DRIVER   = "com.mysql.cj.jdbc.Driver";
     private static final String URL      = "jdbc:mysql://localhost:3306/cafeina_code";
     private static final String USUARIO  = "root";
-    private static final String CONTRASENA = "perezcruz123#";
+    private static final String CONTRASENA = "123456";
 
     private static Connection conexion = null;
 

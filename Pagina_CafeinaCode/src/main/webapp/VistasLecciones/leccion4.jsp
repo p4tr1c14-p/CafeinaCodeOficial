@@ -4,16 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <title>Tipos de Variables</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/leccion4.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/Leccionescss/leccion4.css">
 </head>
 
 <body>
 
     <div class="menu">
-        <img src="${pageContext.request.contextPath}/imagenes/logo_cafeina_code.png" class="logo">
+        <img src="${pageContext.request.contextPath}/img/logo_cafeina_code.png" class="logo">
 
-        <a href="${pageContext.request.contextPath}/index.jsp">Inicio</a>
-        <a href="${pageContext.request.contextPath}/leccion.jsp">Lecciones</a>
+        <a href="${pageContext.request.contextPath}/Inicio.jsp">Inicio</a>
+        <a href="${pageContext.request.contextPath}/VistasLecciones/leccion.jsp">Lecciones</a>
         <a href="${pageContext.request.contextPath}/Challenges.jsp">Challenges</a>
         <a href="${pageContext.request.contextPath}/Mascotas.jsp">Mascota</a>
         <a href="${pageContext.request.contextPath}/Perfil.jsp">Perfil</a>
@@ -21,7 +21,7 @@
     
     <div class="contenedor">
     <h1>CONCEPTOS BÁSICOS</h1>            
-    <form action="${pageContext.request.contextPath}/lecciones" method="post" class="boton">
+    <form action="${pageContext.request.contextPath}/lecciones" method="post">
 
         <input type="hidden" name="accion" value="guardar">
         <input type="hidden" name="id_tema" value="3">
@@ -36,7 +36,7 @@
 
     </form>  
                 
-    <form action="${pageContext.request.contextPath}/lecciones" method="post" class="boton">
+    <form action="${pageContext.request.contextPath}/lecciones" method="post">
 
         <input type="hidden" name="accion" value="guardar">
         <input type="hidden" name="id_tema" value="4">
@@ -51,7 +51,7 @@
 
     </form>
     
-    <form action="${pageContext.request.contextPath}/lecciones" method="post" class="boton">
+    <form action="${pageContext.request.contextPath}/lecciones" method="post">
 
         <input type="hidden" name="accion" value="guardar">
         <input type="hidden" name="id_tema" value="5">
@@ -66,7 +66,7 @@
 
     </form>
             
-    <form action="${pageContext.request.contextPath}/lecciones" method="post" class="boton">
+    <form action="${pageContext.request.contextPath}/lecciones" method="post">
 
         <input type="hidden" name="accion" value="guardar">
         <input type="hidden" name="id_tema" value="6">
@@ -81,7 +81,8 @@
 
     </form>
         
-    <a href="${pageContext.request.contextPath}/lecciones.jsp" class="boton-fundamentos">
+    <a href="${pageContext.request.contextPath}/VistasLecciones/lecciones.jsp" class="boton-fundamentos">
+        <img src="${pageContext.request.contextPath}/img/Boton_Naranja.png" class="boton">
         <span class="texto-boton">REGRESAR</span>
     </a> 
     </div>
