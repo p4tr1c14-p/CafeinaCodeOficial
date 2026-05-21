@@ -1,7 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
 package Configuracion;
 
 import java.sql.Connection;
@@ -15,9 +11,9 @@ import java.sql.SQLException;
 public class Conexion {
 
     private static final String DRIVER   = "com.mysql.cj.jdbc.Driver";
-    private static final String URL      = "jdbc:mysql://localhost:3306/cafeina_code_bd";
+    private static final String URL      = "jdbc:mysql://localhost:3306/cafeina_code";
     private static final String USUARIO  = "root";
-    private static final String CONTRASENA = "1234";
+    private static final String CONTRASENA = "perezcruz123#";
 
     private static Connection conexion = null;
 

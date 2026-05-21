@@ -22,10 +22,10 @@
 <body>
 
     <div class="menu">
-        <img src="${pageContext.request.contextPath}/imagenes/logo_cafeina_code.png" class="logo">
+        <img src="${pageContext.request.contextPath}/img/logo_cafeina_code.png" class="logo">
 
-        <a href="${pageContext.request.contextPath}/index.jsp">Inicio</a>
-        <a href="${pageContext.request.contextPath}/VistasLecciones/lecciones.jsp">Lecciones</a>
+        <a href="${pageContext.request.contextPath}/Inicio.jsp">Inicio</a>
+        <a href="${pageContext.request.contextPath}/lecciones.jsp">Lecciones</a>
         <a href="${pageContext.request.contextPath}/Challenges.jsp">Challenges</a>
         <a href="${pageContext.request.contextPath}/Mascotas.jsp">Mascota</a>
         <a href="${pageContext.request.contextPath}/Perfil.jsp">Perfil</a>
