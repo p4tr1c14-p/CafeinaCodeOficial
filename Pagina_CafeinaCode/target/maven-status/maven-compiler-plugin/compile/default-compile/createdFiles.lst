@@ -1,3 +1,5 @@
+Modelo\Lecciones.class
+Controlador\EditarPerfilServlet.class
 Controlador\LeccionesServlet.class
 Controlador\ChallengesServlet.class
 Controlador\RegistroServlet.class
@@ -9,7 +11,7 @@ Controlador\LoginServlet.class
 Modelo\Dao\PerfilDAO.class
 Modelo\Dao\LeccionesDAO.class
 Modelo\Dao\RegistroDAO.class
-com\mycompany\servlets\MascotaServlet.class
+Controlador\MascotaServlet.class
 Configuracion\Conexion.class
 Modelo\Dao\ChallengesDAO.class
 Modelos\Registro.class
