@@ -81,14 +81,37 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     overflow: hidden;
     animation: aparecer 0.8s ease;
 }
+.boton,
 .boton-fundamentos {
-    width: 180px;
-    padding: 15px;
-    text-align: center;
-    
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
 }
-.img-boton {
-    width: 100%;
+
+.boton button {
+    font-family: 'Press Start 2P', cursive;
+    width: 220px;
+    padding: 15px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    background: #ff9800;
+    color: black;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.2);
+}
+
+.boton-fundamentos {
+    display: block;
+    width: 200px;
+    margin: 0 auto;
+    align-items: center;
+    text-decoration: none;
+    position: relative;
+}
+.boton {
+    width: 200px;
     height: auto;
     display: block;
 }
@@ -109,6 +132,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/ClientSide/css.css to edit this t
     transform: scale(1.05) translateY(-5px);
     filter: brightness(1.1);
 }
+
 .mensaje{
     position: fixed;
     bottom: 20px;

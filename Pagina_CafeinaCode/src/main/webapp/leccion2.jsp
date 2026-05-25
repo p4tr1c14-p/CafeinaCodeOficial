@@ -26,10 +26,10 @@
         Aquí encontraras ejercicios, una guía con conceptos clave
         y otros recursos que te ayudaran en el proceso de aprendizaje.
         </p>
-        <a href="${pageContext.request.contextPath}/lecciones" class="boton-fundamentos">
-            <img src="${pageContext.request.contextPath}/imagenes/Boton_Naranja.png" class="img-boton">
-            <span class="texto-boton">REGRESAR</span>
-        </a>
+        <a href="${pageContext.request.contextPath}/Inicio.jsp" class="boton-fundamentos">    
+        <img src="${pageContext.request.contextPath}/imagenes/Boton_Naranja.png" class="boton">
+        <span class="texto-boton">REGRESAR</span>
+        </a> 
     </div>
 
     <div class="footer">
