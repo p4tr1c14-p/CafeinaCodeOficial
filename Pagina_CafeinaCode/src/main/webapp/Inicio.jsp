@@ -37,7 +37,7 @@
                             a compañará durante tu proceso.
                         </p>
                     </div>
-                    <a href="guia2.jsp" class="link_boton">
+                    <a href="leccion2.jsp" class="link_boton">
                         <button class="boton_texto">¿Qué es este sitio?</button>
                     </a>
                 </div>
