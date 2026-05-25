@@ -1,44 +1,38 @@
-# ☕ Proyecto Cafeína Code
+# ☕ CafeinaCodeWeb 
 
-**Cafeína Code** es una aplicación de escritorio desarrollada en **Windows Forms** orientada a facilitar el aprendizaje del lenguaje **Java**. El objetivo es ofrecer a los estudiantes una plataforma interactiva donde la teoría y la práctica se fusionen bajo una interfaz visualmente atractiva y fácil de usar.
+**CafeinaCodeWeb** es la plataforma educativa en línea de "Cafeína Code". Este proyecto traslada el aprendizaje del lenguaje **Java** al navegador, permitiendo a los estudiantes acceder a recursos didácticos y servicios interactivos de una manera accesible y moderna.
 
----
+## 🚀 Tecnologías y Herramientas 
+El proyecto está desarrollado bajo una arquitectura web profesional utilizando:
 
-## ✨ Características Principales
-* **Lecciones de Java:** Contenido estructurado para aprender la sintaxis de Java desde cero.
-* **Interfaz Dinámica:** Creada con componentes personalizados en WinForms para una experiencia fluida.
-* **Gestión de Datos:** Implementación de controles de usuario para navegar entre los módulos de aprendizaje.
-* **Validación de Conocimientos:** Mini-cuestionarios internos para reforzar lo aprendido en cada sección.
+* **IDE:** NetBeans (Entorno de desarrollo principal).
+* **Servidor de Aplicaciones:** Apache Tomcat (Para la gestión de servicios web y despliegue).
+* **Frontend:**
+    * HTML5 para la estructura.
+    * CSS3 para el diseño y estilos.
+    * JavaScript (JS) para la interactividad en el cliente.
+* **Backend:** Java (Servlets / JSP).
 
----
+## ✨ Características de la Plataforma 
+* **Acceso Universal:** Aprendizaje sin necesidad de instalaciones locales pesadas, directamente desde el navegador.
+* **Módulos de Java:** Contenido organizado para aprender desde lo más básico hasta conceptos avanzados.
+* **Servicios Web:** Implementación de lógica en el servidor mediante Tomcat para gestionar el contenido educativo de forma dinámica.
 
-## 🛠️ Stack Tecnológico
-* **Lenguaje:** C# (C-Sharp)
-* **Framework de UI:** Windows Forms (WinForms)
-* **IDE:** Visual Studio 2026
+## 🎨 Diseño y Estética (UI/UX) 
+Siguiendo la identidad de la marca Cafeína Code, la versión web cuenta con:
 
----
+* **Estética:** Estilo visual pixel art y acogedor 𐔌՞ ܸ.ˬ.ܸ՞𐦯.
+* **Interfaz:** Diseño intuitivo con paletas de colores cálidas que facilitan la lectura y el estudio prolongado.
 
-## 🎨 Estética y Diseño (UI/UX)
-La aplicación no solo busca ser funcional, sino también visualmente agradable:
-
-* **Temática:** "Pixel Art" con elementos **Kawaii** 𐔌՞ ܸ.ˬ.ܸ՞𐦯.
-* **Paleta de Colores:** Azul marino, fucsia y tonos pastel para resaltar la interfaz.
-
----
-
-## 👥 Equipo de Desarrollo
+## 👥 Equipo de Desarrollo 
 * **Patricia Pérez Cruz** - Colaboradora
-* **Rosalinda Aquino Pérez** - Colaboradora
-* **Jesús Alberto Ramírez Salina** - Colaborador
+* **Rosalinda** - Colaboradora
+* **Alberto** - Colaborador
 
----
-
-## 🏫 Información Académica
-* **Institución:** Universidad de la Sierra Juárez (UNSIJ)
-* **Materia:** Programación Visual
+## 🏫 Información Académica 
+* **Institución:** Universidad de la Sierra Juárez (UNSIJ) 
+* **Materia:** Tecnologías Web 
 * **Semestre:** Sexto Semestre
 
-<p align="center">
-  <i>Desarrollado con mucha cafeína ☕✨</i>
-</p>
+---
+<p align="center">Desarrollado con NetBeans, Tomcat y mucha cafeína ☕✨</p>
