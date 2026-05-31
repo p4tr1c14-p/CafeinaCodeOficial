@@ -1,7 +1,6 @@
 /*
  * ChallengesJS.js - Lógica para carga de ejercicios aleatorios y racha
  */
-
 let ejercicioActual = { id: null, texto: "" };
 
 window.onload = function() {
@@ -17,7 +16,6 @@ function cargarEjercicioAleatorio() {
     const contenedor = document.getElementById("descripcionEjercicio");
     if (!contenedor) return;
     contenedor.innerText = "Cargando desafío...";
-
     fetch('/Pagina_CafeinaCode/obtenerEjercicio')
         .then(function(response) {
             if (!response.ok) throw new Error("Error en la respuesta del servidor");
@@ -34,21 +32,29 @@ function cargarEjercicioAleatorio() {
         });
 }
 
+function mostrarAlertaCodigo() {
+    const alerta = document.getElementById("alertaCodigo");
+    if (!alerta) return;
+    alerta.classList.add("visible");
+    setTimeout(function() {
+        alerta.classList.remove("visible");
+    }, 3000);
+}
+
 function enviarRespuesta() {
     const codigo     = document.getElementById("codigoUsuario").value;
     const contenedor = document.getElementById("descripcionEjercicio");
 
     if (!codigo.trim()) {
-        alert("Escribe tu código antes de enviar.");
+        mostrarAlertaCodigo();
         return;
     }
-
     if (!ejercicioActual.id) {
-        alert("Espera a que cargue el ejercicio.");
+        mostrarAlertaCodigo();
         return;
     }
 
-    contenedor.innerText = "Evaluando con IA... ☕";
+    contenedor.innerText = "Espera estamos evaluando tu respuesta... ☕";
 
     const params = new URLSearchParams();
     params.append("codigo",      codigo);

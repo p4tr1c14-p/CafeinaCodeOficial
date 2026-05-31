@@ -3,7 +3,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>Tipos de Variables</title>
+    <title>Clases de Operadores</title>
     <link rel="stylesheet" href="${pageContext.request.contextPath}/css/leccion8.css">
 </head>
     <%
@@ -20,89 +20,66 @@
         }
     %>
 <body>
-
     <div class="menu">
         <img src="${pageContext.request.contextPath}/imagenes/logo_cafeina_code.png" class="logo">
-
         <a href="${pageContext.request.contextPath}/Inicio.jsp">Inicio</a>
         <a href="${pageContext.request.contextPath}/lecciones.jsp">Lecciones</a>
         <a href="${pageContext.request.contextPath}/Challenges.jsp">Challenges</a>
         <a href="${pageContext.request.contextPath}/Mascotas.jsp">Mascota</a>
         <a href="${pageContext.request.contextPath}/Perfil.jsp">Perfil</a>
-    </div>
+    </div> 
     
     <div class="contenedor">
-        <h1>Clases de opreadores</h1>
-        <p>Los operadores Java son símbolos especiales que realizan operaciones sobre variables y valores. Se utilizan para manipular datos y variables en expresiones.<br>
-        Tipos de operadores:<br>
-        Operadores aritméticos<br>
-        Operadores relacionales<br>
-        Operadores lógicos<br>
-        Operadores de asignación<br>
-    </p>
-        <p>Los operadores aritméticos se utilizan para realizar operaciones matemáticas básicas.</p>
-        <div class="ejemplo">
-        <h4> + (Adición)</h4>
-        <h4>- (Resta)</h4>
-        <h4>* (Multiplicación)</h4>
-        <h4>/ (División)</h4>
-        <h4>% (Módulo)</h4> 
-        <h3>Ejemplo:</h3>
-        int a = 10;<br>
-        int b = 5;<br>
-        System.out.println("Addition: " + (a + b));      // Output: 15<br>
-        System.out.println("Subtraction: " + (a - b));   // Output: 5<br>
-        System.out.println("Multiplication: " + (a * b));// Output: 50<br>
-        System.out.println("Division: " + (a / b));      // Output: 2<br>
-        System.out.println("Modulus: " + (a % b));       // Output: 0<br>
-        </div>
-        <h3>Operadores relacionales</h3>
-        <div class="ejemplo2">
-        <h4> == (Igual a)</h4>
-        <h4> != (No es igual a)</h4>
-        <h4> > (Mayor que)</h4>           
-        <h4> < (Menor de)</h4>           
-        <h4>>= (Mayor o igual que)</h4>           
-        <h4> <= (Inferior o igual a)</h4>           
-        <h3>Ejemplo:</h3>
-        int a = 10;<br>
-        int b = 5;<br>
-        System.out.println(a == b); // Output: false<br>
-        System.out.println(a > b);  // Output: true<br>
-        System.out.println(a < b);  // Output: false<br>
-             
-        <h3>Operadores lógicos</h3>
-        <div class="ejemplo3">
-        <h4> && (Y lógico)</h4>
-        <h4>|| (OR lógico)</h4>
-        <h4>! (Lógico NO)</h4>            
-        <h3>Ejemplo:</h3>    
-        boolean x = true;<br>
-        boolean y = false;<br>
-        System.out.println(x && y); // Output: false<br>
-        System.out.println(x || y); // Output: true<br>
-        System.out.println(!x);// Output: false<br>
-    
-            
-        <h3>Operadores de asignación</h3>
-        <div class="ejemplo4">
-        <h4>= (Asignación simple)</h4>
-        <h4>+= (Añadir y asignar)</h4>
-        <h4>-= (Restar y asignar)</h4>            
-        <h4>*= (Multiplica y asigna)</h4>            
-        <h4>/= (Divide y asigna)</h4>            
-        <h4>%= (Módulo y asignar)</h4>    
-        <h3>Ejemplo:</h3>        
-        int a = 10;<br>
-        a += 5;  // Equivalente a = a + 5<br>
-        System.out.println(a); // Output: 15<br>
-        
-        
-        <a href="${pageContext.request.contextPath}/leccion4.jsp" class="boton-fundamentos">
-        <img src="${pageContext.request.contextPath}/imagenes/Boton_Naranja.png" class="boton">
-        <span class="texto-boton">REGRESAR</span>
-        </a>   
+        <h1>CLASES DE OPERADORES</h1>
+
+        <p>Los operadores en Java son símbolos especiales que permiten realizar operaciones sobre variables y valores. Se clasifican según el tipo de operación que realizan.</p>
+
+        <h2>OPERADORES ARITMÉTICOS</h2>
+        <p>Se usan para realizar operaciones matemáticas básicas:</p>
+        <ul>
+            <li><strong>+</strong> Suma: <code>a + b</code></li>
+            <li><strong>-</strong> Resta: <code>a - b</code></li>
+            <li><strong>*</strong> Multiplicación: <code>a * b</code></li>
+            <li><strong>/</strong> División: <code>a / b</code></li>
+            <li><strong>%</strong> Módulo: <code>a % b</code></li>
+        </ul>
+
+        <h2>OPERADORES RELACIONALES</h2>
+        <p>Comparan dos valores y devuelven un resultado booleano (true o false):</p>
+        <ul>
+            <li><strong>==</strong> Igual a</li>
+            <li><strong>!=</strong> Diferente de</li>
+            <li><strong>&gt;</strong> Mayor que</li>
+            <li><strong>&lt;</strong> Menor que</li>
+            <li><strong>&gt;=</strong> Mayor o igual que</li>
+            <li><strong>&lt;=</strong> Menor o igual que</li>
+        </ul>
+
+        <h2>OPERADORES LÓGICOS</h2>
+        <p>Se usan para combinar expresiones booleanas:</p>
+        <ul>
+            <li><strong>&amp;&amp;</strong> AND lógico: ambas condiciones deben ser verdaderas</li>
+            <li><strong>||</strong> OR lógico: al menos una condición debe ser verdadera</li>
+            <li><strong>!</strong> NOT lógico: invierte el valor booleano</li>
+        </ul>
+
+        <h2>OPERADORES DE ASIGNACIÓN</h2>
+        <p>Asignan valores a variables:</p>
+        <ul>
+            <li><strong>=</strong> Asignación simple: <code>a = 5</code></li>
+            <li><strong>+=</strong> Suma y asigna: <code>a += 3</code> equivale a <code>a = a + 3</code></li>
+            <li><strong>-=</strong> Resta y asigna: <code>a -= 3</code></li>
+            <li><strong>*=</strong> Multiplica y asigna: <code>a *= 3</code></li>
+            <li><strong>/=</strong> Divide y asigna: <code>a /= 3</code></li>
+        </ul>
+        <a href="${pageContext.request.contextPath}/lecciones.jsp" class="boton-fundamentos">
+            <img src="${pageContext.request.contextPath}/imagenes/Boton_Naranja.png" class="boton">
+            <span class="texto-boton">REGRESAR</span>
+        </a>
     </div>
-    
-</body> 
-</html>    
+
+    <div class="footer">
+        Aviso de privacidad | @2025 Cafeína Code
+    </div>
+</body>
+</html>

@@ -10,7 +10,7 @@
 <body>
     <div class="menu">
         <img src="imagenes/logo_cafeina_code.png" class="logo">
-        <a href="index.jsp">Inicio</a>
+        <a href="Inicio.jsp">Inicio</a>
         <a href="lecciones">Guía</a>
         <a href="Challenges.jsp">Challenges</a>
         <a href="Mascotas.jsp" class="activo">Mascota</a>
@@ -22,6 +22,13 @@
             <h2 id="nombreMascota">Sin nombre</h2>
             <form class="formulario_r" onsubmit="return false;">
                 <input type="text" id="nombre" placeholder="Escribe el nombre">
+                <div id="alertaNombre" class="alerta-nombre">
+                    <span class="alerta-icono">🐾 ¡NOMBRE GUARDADO!</span>
+                    Tu mascota ya tiene su nombre.
+                    <span class="alerta-sugerencia">
+                        ¡Cuídala bien y sigue aprendiendo! ☕
+                    </span>
+                </div>
                 <div class="botones-fila">
                     <button type="button" onclick="guardarNombre()">Guardar</button>
                     <button type="button" onclick="borrarNombre()" style="background:red;">Borrar</button>

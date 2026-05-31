@@ -90,16 +90,15 @@ textarea {
 }
 
 .boton-invisible {
-font-family: 'Press Start 2P', cursive;
-background: none;
-border: none;
-padding: 0;
-cursor: pointer;
-display: block;
-margin: 0 auto;
-position: relative;
+    font-family: 'Press Start 2P', cursive;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+    position: relative;
 }
-
 
 .boton-invisible:active {
     transform: scale(0.95);
@@ -136,4 +135,78 @@ position: relative;
     font-family: 'Press Start 2P', cursive;
     font-size: 10px;
     margin-top: auto;
+}
+
+/* LETRERO ESTILO PENGUIN DINER - ADVERTENCIA */
+.alerta-opinion {
+    display: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    background-color: #ff6a00;
+    color: #fff200;
+    border: 4px solid #fff200;
+    outline: 4px solid #ff6a00;
+    padding: 18px 22px;
+    border-radius: 6px;
+    margin: 16px auto;
+    width: 60%;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 2;
+    box-shadow: 0 0 0 6px #ff6a00, 6px 6px 0px #7a2e00;
+    animation: sacudida 0.4s ease-in-out 2;
+}
+
+.alerta-opinion.visible {
+    display: block;
+}
+
+/* LETRERO ESTILO PENGUIN DINER - ÉXITO */
+.alerta-exito {
+    display: none;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    background-color: #00a550;
+    color: #fff200;
+    border: 4px solid #fff200;
+    outline: 4px solid #00a550;
+    padding: 18px 22px;
+    border-radius: 6px;
+    margin: 16px auto;
+    width: 60%;
+    box-sizing: border-box;
+    text-align: center;
+    line-height: 2;
+    box-shadow: 0 0 0 6px #00a550, 6px 6px 0px #004d26;
+    animation: sacudida 0.4s ease-in-out 2;
+}
+
+.alerta-exito.visible {
+    display: block;
+}
+
+.alerta-icono {
+    font-size: 20px;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.alerta-sugerencia {
+    font-size: 8px;
+    color: #ffffff;
+    display: block;
+    margin-top: 10px;
+    line-height: 1.8;
+    background-color: rgba(0,0,0,0.25);
+    padding: 8px;
+    border-radius: 4px;
+}
+
+@keyframes sacudida {
+    0%   { transform: translateX(0); }
+    20%  { transform: translateX(-6px); }
+    40%  { transform: translateX(6px); }
+    60%  { transform: translateX(-4px); }
+    80%  { transform: translateX(4px); }
+    100% { transform: translateX(0); }
 }
