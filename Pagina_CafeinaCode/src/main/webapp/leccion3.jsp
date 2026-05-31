@@ -24,7 +24,7 @@
     <div class="menu">
         <img src="${pageContext.request.contextPath}/imagenes/logo_cafeina_code.png" class="logo">
 
-        <a href="${pageContext.request.contextPath}/index.jsp">Inicio</a>
+        <a href="${pageContext.request.contextPath}/Inicio.jsp">Inicio</a>
         <a href="${pageContext.request.contextPath}/lecciones.jsp">Lecciones</a>
         <a href="${pageContext.request.contextPath}/Challenges.jsp">Challenges</a>
         <a href="${pageContext.request.contextPath}/Mascotas.jsp">Mascota</a>

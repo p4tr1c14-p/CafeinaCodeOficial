@@ -22,7 +22,7 @@
 <body>
 
     <div class="menu">
-        <img src="${pageContext.request.contextPath}/img/logo_cafeina_code.png" class="logo">
+        <img src="${pageContext.request.contextPath}/imagenes/logo_cafeina_code.png" class="logo">
 
         <a href="${pageContext.request.contextPath}/Inicio.jsp">Inicio</a>
         <a href="${pageContext.request.contextPath}/lecciones.jsp">Lecciones</a>
@@ -43,9 +43,9 @@
     <p>•JVM (Java Virtual Machine): El componente de software que ejecuta el bytecode de Java, proporcionando independencia de la plataforma.</p>
     <p>•JRE (Java Runtime Environment): Incluye la JVM y las bibliotecas necesarias para ejecutar aplicaciones Java.</p>
     <p>•JDK (Java Development Kit): El conjunto completo de herramientas para desarrolladores, que incluye el JRE, el compilador (javac) y otras utilidades para crear aplicaciones Java.</p>
-    <a href="${pageContext.request.contextPath}/lecciones.jsp" class="boton-fundamentos">
-        <img src="${pageContext.request.contextPath}/imgagenes/Boton_Naranja.png" class="img-boton">
-        <span class="texto-boton">REGRESAR</span>
+    <a href="${pageContext.request.contextPath}/leccion4.jsp" class="boton-fundamentos">    
+    <img src="${pageContext.request.contextPath}/imagenes/Boton_Naranja.png" class="boton">
+    <span class="texto-boton">REGRESAR</span>
     </a> 
 
     </div>

@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
 
-/* Corrección para que el footer siempre esté abajo */
 html, body {
     height: 100%;
 }
@@ -49,14 +48,14 @@ body {
     width: 70%;
     margin: auto;
     margin-top: 30px;
-    flex: 1; /* Esto hace que el contenedor crezca y empuje el footer */
+    flex: 1;
 }
 
 /* RETOS */
 .reto {
     margin-bottom: 40px;
     text-align: left;
-    background-color: rgba(0, 0, 0, 0.4); /* Fondo para que se lea mejor */
+    background-color: rgba(0, 0, 0, 0.4);
     padding: 20px;
     border-radius: 10px;
 }
@@ -70,7 +69,7 @@ body {
     font-size: 10px;
     margin: 20px 0;
     line-height: 1.5;
-    color: #ffeb3b; /* Amarillo para resaltar el ejercicio */
+    color: #ffeb3b;
 }
 
 /* BOTÓN REFRESCAR */
@@ -92,22 +91,22 @@ body {
 /* CAJAS DE TEXTO */
 textarea {
     width: 100%;
-    height: 120px; /* Un poco más alta */
+    height: 120px;
     background-color: #1a1a1a;
     border: 2px solid white;
     color: #00ff00;
     font-family: 'Courier New', Courier, monospace;
-    font-size: 12px;
+    font-size: 16px;
     padding: 10px;
     box-sizing: border-box;
 }
 
 /* BOTÓN ENVIAR */
 .boton-contenedor {
-    position: relative;   
-    display: block;       
-    width: fit-content;   
-    margin: 20px auto;    
+    position: relative;
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
     text-decoration: none;
     transition: transform 0.2s;
     background: none;
@@ -147,7 +146,7 @@ textarea {
 
 .gary {
     position: fixed;
-    bottom: 80px; /* Subido para que no lo tape el footer */
+    bottom: 80px;
     right: 20px;
     width: 100px;
 }
@@ -160,4 +159,58 @@ textarea {
     font-family: 'Press Start 2P', cursive;
     font-size: 10px;
     margin-top: auto;
+}
+
+/* BOTÓN SIGUIENTE / FINALIZAR */
+.btn-siguiente-wrapper {
+    margin: 30px auto;
+    text-align: center;
+}
+
+.siguiente-texto {
+    font-size: 10px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.btn-siguiente {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    background-color: #ff8c00;
+    color: #000;
+    padding: 12px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-block;
+    border: 2px solid #ffeb3b;
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+.btn-siguiente:hover {
+    background-color: #ffb347;
+    transform: scale(1.05);
+}
+
+/* LETRERO DE ADVERTENCIA (código vacío) */
+.alerta-codigo {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 9px;
+    background-color: rgba(255, 60, 60, 0.15);
+    border: 2px solid #ff3c3c;
+    color: #ff6b6b;
+    padding: 14px 18px;
+    border-radius: 8px;
+    margin: 10px 0;
+    text-align: center;
+    animation: parpadeo 0.5s ease-in-out 3;
+    display: none;
+}
+
+.alerta-codigo.visible {
+    display: block;
+}
+
+@keyframes parpadeo {
+    0%, 100% { opacity: 1; }
+    50%       { opacity: 0.3; }
 }

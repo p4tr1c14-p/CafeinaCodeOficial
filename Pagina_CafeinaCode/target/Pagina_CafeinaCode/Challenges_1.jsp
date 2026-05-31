@@ -23,6 +23,9 @@
                     ↻ OTRO EJERCICIO
                 </button>
                 <p id="descripcionEjercicio">Conectando con la base de datos... ☕</p>
+                <div id="alertaCodigo" class="alerta-codigo">
+                    ⚠ ¡Espera! Debes escribir tu código antes de enviar. ☕
+                </div>
                 <textarea id="codigoUsuario" placeholder="Escribe tu código Java aquí..."></textarea>
             </div>
             <button class="boton-contenedor" onclick="enviarRespuesta()">

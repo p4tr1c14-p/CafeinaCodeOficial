@@ -10,7 +10,7 @@
     <body>
         <div class="menu">
             <img src="imagenes/logo_cafeina_code.png" class="logo">
-            <a href="index.jsp">Inicio</a>
+            <a href="Inicio.jsp">Inicio</a>
             <a href="lecciones">Guía</a>
             <a href="Challenges.jsp" class="activo">Challenges</a>
             <a href="Mascotas.jsp">Mascota</a>
@@ -31,6 +31,24 @@
                 <br><br>
                 ¡Gracias por aprender con nosotros!
             </p>
+
+            <div id="alertaOpinion" class="alerta-opinion">
+                <span class="alerta-icono">🐧 ¡OYE! ¡ESCRIBE ALGO PRIMERO!</span>
+                Aún no has escrito tu opinión.
+                <span class="alerta-sugerencia">
+                    💡 Cuéntanos: ¿Qué ejercicios te gustaron más?<br>
+                    ¿Te gustaría más retos de POO, arreglos, o algo completamente distinto?
+                </span>
+            </div>
+
+            <div id="alertaExito" class="alerta-exito">
+                <span class="alerta-icono">🐧 ¡GRACIAS POR TU OPINIÓN!</span>
+                Tu respuesta fue enviada correctamente.
+                <span class="alerta-sugerencia">
+                    Redirigiendo al inicio en unos segundos...
+                </span>
+            </div>
+
             <textarea id="opinion" placeholder="Escribe tu opinión aquí..."></textarea>
             <a href="#" class="boton-contenedor" onclick="enviarOpinion()">
                 <img src="imagenes/Boton_Naranja.png" class="boton">
@@ -44,10 +62,18 @@
         <script>
             function enviarOpinion() {
                 const opinion = document.getElementById("opinion").value;
+
                 if (!opinion.trim()) {
-                    alert("Escribe tu opinión antes de enviar.");
+                    const alerta = document.getElementById("alertaOpinion");
+                    alerta.classList.remove("visible");
+                    void alerta.offsetWidth;
+                    alerta.classList.add("visible");
+                    setTimeout(function() {
+                        alerta.classList.remove("visible");
+                    }, 8000);
                     return;
                 }
+
                 const params = new URLSearchParams();
                 params.append("retroalimentacion", opinion);
                 fetch('/Pagina_CafeinaCode/GuardarRetroServlet', {
@@ -57,14 +83,25 @@
                 })
                 .then(function(response) {
                     if (response.ok || response.redirected) {
-                        alert("¡Gracias por tu opinión!");
-                        window.location.href = "index.jsp";
+                        const alertaExito = document.getElementById("alertaExito");
+                        alertaExito.classList.add("visible");
+                        setTimeout(function() {
+                            window.location.href = "Inicio.jsp";
+                        }, 2500);
                     } else {
-                        alert("Error al enviar la opinión.");
+                        const alertaExito = document.getElementById("alertaExito");
+                        alertaExito.classList.add("visible");
+                        setTimeout(function() {
+                            window.location.href = "Inicio.jsp";
+                        }, 2500);
                     }
                 })
                 .catch(function(error) {
-                    alert("Error al enviar la opinión.");
+                    const alertaExito = document.getElementById("alertaExito");
+                    alertaExito.classList.add("visible");
+                    setTimeout(function() {
+                        window.location.href = "Inicio.jsp";
+                    }, 2500);
                 });
             }
         </script>

@@ -42,7 +42,7 @@
                         <img src="${pageContext.request.contextPath}/imagenes/usuario.png" class="foto_circular" alt="Perfil">
                     </div>
                     <br>
-                    <button type="button" id="btn-editar" class="btn" style="width: 130px; display: block; margin: 10px auto 0 auto; padding: 6px 0;">Editar Perfil</button>
+                    <button type="button" id="btn-editar" class="btn">Editar Perfil</button>
                 </div>
                 
                 <div class="columna_datos" id="vista-datos">
@@ -85,8 +85,8 @@
                         </p>
                         <br>
                         
-                        <button type="submit" class="btn" style="background: #00f0ff; color: #000; font-weight: bold;">Guardar Cambios</button>
-                        <button type="button" id="btn-cancelar" class="btn" style="background: #ff007f; color: #fff; margin-left: 10px;">Cancelar</button>
+                        <button type="submit" class="btn_e" style="background: #00f0ff; color: #000; font-weight: bold;">Guardar Cambios</button>
+                        <button type="button" id="btn-cancelar" class="btn_e" style="background: #ff007f; color: #fff; margin-left: 10px;">Cancelar</button>
                     </form>
                 </div>
             </div>

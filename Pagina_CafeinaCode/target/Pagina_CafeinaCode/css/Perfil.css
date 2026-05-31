@@ -55,7 +55,8 @@ body {
     margin: 0;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px; /* Ajusta según tus links */
+    font-size: 16px; 
+    width: max-content;        
 }
 
 /* 2. Contenedor del dropdown */
@@ -127,9 +128,12 @@ body {
 
 /* FOTO CIRCULAR */
 .columna_foto {
-    flex: 1;
     display: flex;
-    justify-content: center;
+    flex-direction: column;   /* Fuerza a que el botón se coloque abajo de la foto */
+    align-items: center;       /* Centra la foto y el botón horizontalmente */
+    justify-content: flex-start; /* Alinea los elementos al inicio verticalmente */
+    gap: 15px;                 /* Crea un espacio limpio entre la foto y el botón */
+    min-width: 250px;          /* Evita que la columna se comprima demasiado */
 }
 
 .foto_circular {
@@ -138,6 +142,25 @@ body {
     border-radius: 50%; /* La hace círculo perfecto */
     border: 4px solid white;
     object-fit: cover;
+}
+
+
+#btn-editar {
+    width: 180px;
+    padding: 10px 20px;          /* Controlamos el alto con espaciado, no con height */
+    background-color: #ff007f;   /* Tu rosa neón */
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: "Orbitron", sans-serif;
+    font-weight: bold;
+    transition: background 0.3s ease;
+}
+
+#btn-editar:hover {
+    background-color: #00f0ff;   /* Cambia a cian neón */
+    color: #000000;
 }
 
 /* LISTA DE DATOS */
