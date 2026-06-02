@@ -20,7 +20,7 @@ public class ChallengesServlet extends HttpServlet {
 
     private static final String DB_URL  = "jdbc:mysql://localhost:3306/cafeina_code?connectTimeout=3000";
     private static final String DB_USER = "root";
-    private static final String DB_PASS = "perezcruz123#";
+    private static final String DB_PASS = "1234";
     private static final String AI_KEY  = "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";
     private static final String AI_URL  = "https://openrouter.ai/api/v1/chat/completions";
 
