@@ -36,6 +36,9 @@
                     </button>
                 </div>
             </form>
+            
+            <a>¿Aún no tienes una cuenta?</a>
+            <a href="Registro.jsp">Registrarse</a>
 
         </div>
 

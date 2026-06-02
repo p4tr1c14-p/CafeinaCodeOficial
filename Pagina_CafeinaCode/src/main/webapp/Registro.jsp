@@ -15,6 +15,13 @@
     </head>
     <body>
         
+        <%
+            // Recuperamos los datos de la URL si es que hubo un reenvío por error
+            String error = request.getParameter("error");
+            String nombreIngresado = request.getParameter("nombre") != null ? request.getParameter("nombre") : "";
+            String correoIngresado = request.getParameter("correo") != null ? request.getParameter("correo") : "";
+        %>
+
         <div class="cuadro_r">
             
             <div class="cerrar">
@@ -30,6 +37,13 @@
             <h1 class="Registro">Registro</h1>
             
             <form class="formulario_r" action="RegistroServlet" method="POST">
+                
+                <%if("usuario_ocupado".equals(error)){%>
+                    <div style="color: #ff4a4a; font-size: 14px; margin-bottom: 10px; text-align: center; font-weight: bold;">
+                        Este nombre de usuario ya esta en uso. Elije otro
+                    </div>
+                <%}%>
+                
                 <div class="escribir_r">
                     <input type="text" name="nombre_usuario" placeholder="Nombre de usuario" id="user" required="">
                 </div>
@@ -48,8 +62,9 @@
                 </div>
             </form>
             
-            
-            
+                <a>¿Ya tienes una cuenta?</a>
+                <a href="Login.jsp">Iniciar Sesion</a>
+                
         </div>
         
         <!-- FOOTER -->
