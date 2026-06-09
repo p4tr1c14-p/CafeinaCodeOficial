@@ -72,7 +72,7 @@
             <li><strong>*=</strong> Multiplica y asigna: <code>a *= 3</code></li>
             <li><strong>/=</strong> Divide y asigna: <code>a /= 3</code></li>
         </ul>
-        <a href="${pageContext.request.contextPath}/lecciones.jsp" class="boton-fundamentos">
+        <a href="${pageContext.request.contextPath}/leccion4.jsp" class="boton-fundamentos">
             <img src="${pageContext.request.contextPath}/imagenes/Boton_Naranja.png" class="boton">
             <span class="texto-boton">REGRESAR</span>
         </a>
