@@ -30,23 +30,31 @@
         <a href="${pageContext.request.contextPath}/Mascotas.jsp">Mascota</a>
         <a href="${pageContext.request.contextPath}/Perfil.jsp">Perfil</a>
     </div>    
-    
+
     <div class="contenedor">
         <h1>VARIABLES EN JAVA</h1>
 
         <p>
-            Son contenedores en los que se guardan datos de un tipo específico.
+            Las variables son espacios de memoria que permiten almacenar datos
+            durante la ejecución de un programa. Cada variable debe tener un tipo
+            de dato específico, el cual determina qué valores puede almacenar.
         </p>
 
         <h2>Variables locales</h2>
-        <p>Solo pueden utilizarse dentro de un método.</p>
+
+        <p>
+            Las variables locales se declaran dentro de un método, constructor o
+            bloque de código. Solo pueden utilizarse dentro del ámbito en el que
+            fueron declaradas.
+        </p>
 
         <div class="bloque-codigo">
-            public static void main(String[] args) {<br>
-            &nbsp;&nbsp;int var = 5;<br>
-            &nbsp;&nbsp;System.out.println(var);<br>
-            }
+            <pre><code>public static void main(String[] args) {
+        int var = 5;
+        System.out.println(var);
+    }</code></pre>
         </div>
+    </div>
 
         <a href="${pageContext.request.contextPath}/leccion4.jsp" class="boton-fundamentos">
         <img src="${pageContext.request.contextPath}/imagenes/Boton_Naranja.png" class="boton">

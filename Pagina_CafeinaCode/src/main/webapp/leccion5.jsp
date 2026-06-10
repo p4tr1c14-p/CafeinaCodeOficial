@@ -31,35 +31,57 @@
         <a href="${pageContext.request.contextPath}/Perfil.jsp">Perfil</a>
     </div> 
     
-     <div class="contenedor">
+    <div class="contenedor">
         <h1>¿Qué es un arreglo en Java?</h1>
-        
-        <p>Los arreglos en Java son un tipo de contenedor, donde se pueden almacenar múltiples elementos de forma secuencial, siempre que sean del mismo tipo.</p>
+
+        <p>
+            Los arreglos en Java son estructuras que permiten almacenar múltiples
+            elementos de forma secuencial, siempre que sean del mismo tipo de dato.
+        </p>
+
         <h2>¿Cómo declarar un arreglo en Java?</h2>
-        <p>Para declarar un arreglo, se tiene que indicar el tipo de dato de los elementos que contendrá el arreglo, y el nombre del arreglo.Para inicializarlo, se tiene que crear una nueva instancia y asignarla a la variable.Esto se logra usando la palabra reservada new, seguida del tipo de dato, así como indicando el tamaño del arreglo entre corchetes</p>
-        <div class="arreglos">
-            1._Declaramos la variable (el nombre y el tipo). 
-        <br>int[] numeros;<br>
-        2._Creamos el arreglo con un tamaño de 10 espacios.
-        <br>numeros = new int[10];<br>
-        3._A veces ya sabes qué datos quieres guardar desde el principio. En este caso, no necesitas la palabra new ni especificar el tamaño:<br>
-        int[] misNumeros = {10, 20, 30, 40};<br>
-        Ejemplo de acceso y asignación:
-        <br>int[] puntajes = new int[3];<br>
-        
-        Es fundamental mencionar que en Java empezamos a contar desde cero.
-        Primer elemento: Índice 0
-        Último elemento: Índice n-1 (donde n es el tamaño).
-        <br>puntajes[0] = 100; // Primer espacio<br>
-        puntajes[1] = 85;  // Segundo espacio<br>
-        puntajes[2] = 92;  // Tercer y último espacio<br>
-        System.out.println("El primer puntaje es: " + puntajes[0]);         
+
+        <p>
+            Para declarar un arreglo se indica el tipo de dato de sus elementos y
+            el nombre del arreglo. Para inicializarlo, se utiliza la palabra
+            reservada <strong>new</strong> junto con el tamaño del arreglo entre
+            corchetes.
+        </p>
+
+        <div class="bloque-codigo">
+            <pre><code>// 1. Declaramos la variable
+        int[] numeros;
+
+        // 2. Creamos el arreglo con tamaño 10
+        numeros = new int[10];
+
+        // 3. Inicialización con valores conocidos
+        int[] misNumeros = {10, 20, 30, 40};
+
+        // Ejemplo de acceso y asignación
+        int[] puntajes = new int[3];
+
+        puntajes[0] = 100; // Primer elemento
+        puntajes[1] = 85;  // Segundo elemento
+        puntajes[2] = 92;  // Tercer elemento
+
+        System.out.println("El primer puntaje es: " + puntajes[0]);</code></pre>
     </div>
+
+        <p>
+            Es importante recordar que en Java los arreglos comienzan desde el índice
+            0. Por lo tanto:
+        </p>
+
+        <ul>
+            <li>Primer elemento: índice 0</li>
+            <li>Último elemento: índice n-1 (donde n es el tamaño del arreglo)</li>
+        </ul>
     <a href="${pageContext.request.contextPath}/leccion4.jsp" class="boton-fundamentos">    
     <img src="${pageContext.request.contextPath}/imagenes/Boton_Naranja.png" class="boton">
     <span class="texto-boton">REGRESAR</span>
     </a>  
 </div>
-    
+  
 </body> 
 </html>

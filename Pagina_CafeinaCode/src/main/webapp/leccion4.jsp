@@ -152,6 +152,5 @@
     <div class="footer">
             Aviso de privacidad | @2025 Cafeína Code
     </div>
-
 </body>
 </html>          
