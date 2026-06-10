@@ -138,6 +138,7 @@
     animation: aparecer 0.5s ease forwards,
                desaparecer 0.5s ease 3s forwards;
 }
+
 .bloque-codigo {
     background-color: #1a1025; 
     color: #e6d6ff; 
