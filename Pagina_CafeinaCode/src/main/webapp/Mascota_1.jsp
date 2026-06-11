@@ -18,7 +18,7 @@
         </div>
         <div class="contenido">
             <div class="columna-mascota">
-                <img src="imagenes/final_pat.gif" class="mascota-arriba">
+                <img src="imagenes/final_pati.gif" class="mascota-arriba">
                 <h2 id="nombreMascota">Sin nombre</h2>
                 <form class="formulario_r" onsubmit="return false;">
                     <input type="text" id="nombre" placeholder="Escribe el nombre">

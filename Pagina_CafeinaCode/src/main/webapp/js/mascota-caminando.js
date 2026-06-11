@@ -11,7 +11,7 @@
     var img = document.createElement("img");
     img.id = "mascotaCaminando";
 
-    if (mascota === "pat") { img.src = "imagenes/secuencia_pat.gif"; }
+    if (mascota === "pat") { img.src = "imagenes/secuencia_derec_pati.gif"; }
     else if (mascota === "ros") { img.src = "imagenes/final_ros.gif"; }
     else if (mascota === "bet") { img.src = "imagenes/secuencia_bet.gif"; }
 
@@ -52,7 +52,7 @@
 
         if (x > window.innerWidth - 70) {
             direccion = -1;
-            if (mascota === "pat" || !mascota) { img.src = "imagenes/secuencia_izq_pat.gif"; }
+            if (mascota === "pat" || !mascota) { img.src = "imagenes/secuencia_izq_pati.gif"; }
             var r = Math.floor(Math.random() * 3);
             if (r === 0) { pausado = true; tiempoPausa = 90; }
             else if (r === 1) { volando = true; }
@@ -60,7 +60,7 @@
 
         if (x < -70) {
             direccion = 1;
-            if (mascota === "pat" || !mascota) { img.src = "imagenes/secuencia_pat.gif"; }
+            if (mascota === "pat" || !mascota) { img.src = "imagenes/secuencia_derec_pati.gif"; }
             var r2 = Math.floor(Math.random() * 3);
             if (r2 === 0) { pausado = true; tiempoPausa = 90; }
             else if (r2 === 1) { volando = true; }

@@ -30,7 +30,7 @@
 
         <!-- MASCOTAS -->
         <div class="contenedor-mascotas">
-            <img src="imagenes/final_pat.gif" class="mascota"
+            <img src="imagenes/final_pati.gif" class="mascota-pati"
                  onclick="guardarMascota('pat'); window.location.href='Mascota_1.jsp'">
             <img src="imagenes/final_ros.gif" class="mascota"
                  onclick="guardarMascota('ros'); window.location.href='Mascota_2.jsp'">
