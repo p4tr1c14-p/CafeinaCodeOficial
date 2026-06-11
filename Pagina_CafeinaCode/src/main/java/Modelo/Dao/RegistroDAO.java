@@ -76,4 +76,24 @@ public class RegistroDAO {
             }
         }
     }
+    
+    public boolean existeNombreUsuario(String nombreUsuario) {
+        boolean existe = false;
+        String sql = "select count(*) from usuario where nombre_usuario = ?"; 
+
+        try (Connection con = Conexion.conectar();
+             PreparedStatement ps = con.prepareStatement(sql)) {
+
+            ps.setString(1, nombreUsuario);
+
+            try (ResultSet rs = ps.executeQuery()) {
+                if (rs.next() && rs.getInt(1) > 0) {
+                    existe = true; 
+                }
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return existe;
+    }
 }

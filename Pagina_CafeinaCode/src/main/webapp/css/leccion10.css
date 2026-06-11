@@ -139,6 +139,18 @@
                desaparecer 0.5s ease 3s forwards;
 }
 .bloque-codigo {
+    background-color: buttonface;
+    padding: 5px;
+    border-radius: 4px;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    color: green;
+    display: block;
+    width: 55%;
+    margin: 10px auto;
+}
+
+.bloque-codigo {
     background-color: #1a1025; 
     color: #e6d6ff; 
     padding: 25px 20px;
@@ -156,6 +168,7 @@
 .bloque-codigo code {
     color: #f0e6ff;
 }
+
 @keyframes aparecer {
     to {
         opacity: 1;

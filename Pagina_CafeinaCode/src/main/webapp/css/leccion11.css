@@ -156,6 +156,7 @@
 .bloque-codigo code {
     color: #f0e6ff;
 }
+
 @keyframes aparecer {
     to {
         opacity: 1;

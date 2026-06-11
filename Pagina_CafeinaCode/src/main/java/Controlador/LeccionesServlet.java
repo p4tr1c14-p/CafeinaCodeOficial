@@ -66,39 +66,58 @@ public class LeccionesServlet extends HttpServlet {
                     case "1":
                         nombreTema = "FUNDAMENTOS DE JAVA";
                         destino = "/leccion3.jsp";
-                        mensaje = "🎉 ¡Felicidades acompletaste un 20% de tu lección!";
+                        mensaje = "🎉 ¡Felicidades acompletaste un 11.11% de tu lección!";
                         break;
 
                     case "2":
                         nombreTema = "CONCEPTOS BÁSICOS";
                         destino = "/leccion4.jsp";
-                        mensaje = "🎉 ¡Felicidades acompletaste un 16.66% de tu lección!";
+                        mensaje = "🎉 ¡Felicidades acompletaste un 11.11% de tu lección!";
                         break;
 
                     case "3":
                         nombreTema = "ARREGLOS";
                         destino = "/leccion5.jsp";
-                        mensaje = "🎉 ¡Felicidades acompletaste un 20% de tu lección!";
+                        mensaje = "🎉 ¡Felicidades acompletaste un 11.11% de tu lección!";
                         break;
 
                     case "4":
                         nombreTema = "CAST DE VARIABLES";
                         destino = "/leccion6.jsp";
-                        mensaje = "🎉 ¡Felicidades acompletaste un 20% de tu lección!";
+                        mensaje = "🎉 ¡Felicidades acompletaste un 11.11% de tu lección!";
                         break;
 
                     case "5":
                         nombreTema = "TIPO DE VARIABLES";
                         destino = "/leccion7.jsp";
-                        mensaje = "🎉 ¡Felicidades acompletaste un 20% de tu lección!";
+                        mensaje = "🎉 ¡Felicidades acompletaste un 11.11% de tu lección!";
                         break;
 
                     case "6":
                         nombreTema = "CLASES DE OPERADORES";
                         destino = "/leccion8.jsp";
+                        mensaje = "🎉 ¡Felicidades acompletaste un 11.11% de tu lección!";
+                        break;
+                    case "7":
+                        nombreTema = "SENTENCIAS IF-ELSE";
+                        destino = "/leccion9.jsp";
+                        mensaje = "🎉 ¡Felicidades acompletaste un 11.11% de tu lección!";
+                        break;
+                    case "8":
+                        nombreTema = "CONSTRUCTORES";
+                        destino = "/leccion10.jsp";
+                        mensaje = "🎉 ¡Felicidades acompletaste un 11.11% de tu lección!";
+                        break;
+                    case "9":
+                        nombreTema = "SENTENCIAS IF-ELSE";
+                        destino = "/leccion11.jsp";
+                        mensaje = "🎉 ¡Felicidades acompletaste un 11.11% de tu lección!";
+                        break;
+                    case "10":
+                        nombreTema = "CONSTRUCTORES";
+                        destino = "/leccion12.jsp";
                         mensaje = "🎉 ¡Felicidades completaste el 100% de tus lecciones, ahora continua con tus ejercicios!";
                         break;
-
                     default:
                         destino = "/lecciones.jsp";
                         break;

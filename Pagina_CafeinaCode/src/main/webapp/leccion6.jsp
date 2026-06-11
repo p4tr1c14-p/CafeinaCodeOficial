@@ -32,23 +32,41 @@
     </div> 
     
     <div class="contenedor">
-        <h1>CASTING DE VARIABLES</h1> 
-        <p> En Java, cada variable se declara con un tipo de dato específico,el casting en Java se usa para convertir un tipo de dato en otro, en Java existen dos tipos de casting el implícito y el explícito.</p><br>
-        <h3>Casting implícito</h3>
-        <p>Sucede cuando conviertes un tipo “más pequeño” a uno “más grande”.</p>
-        <div class="codigo">
-        int numero = 10;
-        double resultado = numero;  // int → double
-        
-        System.out.println(resultado); // 10.0
-        </div>
-        <h3>Casting expícito</h3>
-        <p>Se usa cuando conviertes un tipo “más grande” a uno “más pequeño”. Aquí sí puede haber pérdida de datos.</p>
-        <div class="codigo2">
-        double numero = 9.78;
-        int resultado = (int) numero;  // double → int
+        <h1>CASTING DE VARIABLES</h1>
 
-        System.out.println(resultado); // 9
+        <p>
+            En Java, cada variable se declara con un tipo de dato específico.
+            El <strong>casting</strong> es el proceso de convertir un tipo de dato
+            en otro. Existen dos tipos de casting: implícito y explícito.
+        </p>
+
+        <h3>Casting implícito</h3>
+
+        <p>
+            Ocurre automáticamente cuando se convierte un tipo de dato más pequeño
+            a uno más grande. Esta conversión no implica pérdida de información.
+        </p>
+
+        <div class="bloque-codigo">
+            <pre><code>int numero = 10;
+    double resultado = numero;  // int → double
+
+    System.out.println(resultado); // 10.0</code></pre>
+        </div>
+
+        <h3>Casting explícito</h3>
+
+        <p>
+            Se utiliza cuando se convierte un tipo de dato más grande a uno más
+            pequeño. En este caso puede producirse pérdida de información, por lo
+            que es necesario indicar la conversión manualmente.
+        </p>
+
+        <div class="bloque-codigo">
+            <pre><code>double numero = 9.78;
+    int resultado = (int) numero;  // double → int
+
+    System.out.println(resultado); // 9</code></pre>
         </div>
         <a href="${pageContext.request.contextPath}/leccion4.jsp" class="boton-fundamentos">
         <img src="${pageContext.request.contextPath}/imagenes/Boton_Naranja.png" class="boton">

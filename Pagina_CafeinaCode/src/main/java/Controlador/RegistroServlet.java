@@ -29,13 +29,17 @@ public class RegistroServlet extends HttpServlet {
         String password   = request.getParameter("password");
         String userAlias  = request.getParameter("nombre_usuario");
         
-        System.out.println("Intentando registrar: " + userAlias + " | " + email);
+        RegistroDAO dao = new RegistroDAO();
+        
+        if(dao.existeNombreUsuario(userAlias)){
+            response.sendRedirect("Registro.jsp?error=usuario_ocupado&correo=" + email + "&nombre" + userAlias);
+            return;
+        }
         
         Registro reg = new Registro();
         reg.setCorreo(email);
         reg.setPassword(password);
         
-        RegistroDAO dao = new RegistroDAO();
         
         try {
             int idGenerado = dao.registrarUsuario(reg, userAlias);

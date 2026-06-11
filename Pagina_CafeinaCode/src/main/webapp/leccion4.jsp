@@ -80,7 +80,70 @@
         </button>
 
     </form>
-        
+    
+    
+    <form action="${pageContext.request.contextPath}/lecciones" method="post" class="boton">
+
+        <input type="hidden" name="accion" value="guardar">
+        <input type="hidden" name="id_tema" value="7">
+
+        <input type="hidden"
+               name="descripcion"
+               value="SÃ­mbolos que ayudan a realizar operaciones">
+
+        <button type="submit">
+            SENTENCIAS IF-ELSE
+        </button>
+
+    </form>    
+      
+    <form action="${pageContext.request.contextPath}/lecciones" method="post" class="boton">
+
+        <input type="hidden" name="accion" value="guardar">
+        <input type="hidden" name="id_tema" value="8">
+
+        <input type="hidden"
+               name="descripcion"
+               value="SÃ­mbolos que ayudan a realizar operaciones">
+
+        <button type="submit">
+            BUCLES FOR & WHILE
+        </button>
+
+    </form>
+    
+    <form action="${pageContext.request.contextPath}/lecciones" method="post" class="boton">
+
+        <input type="hidden" name="accion" value="guardar">
+        <input type="hidden" name="id_tema" value="9">
+
+        <input type="hidden"
+               name="descripcion"
+               value="SÃ­mbolos que ayudan a realizar operaciones">
+
+        <button type="submit">
+            CONSTRUCTORES
+        </button>
+
+    </form>
+    
+    
+    <form action="${pageContext.request.contextPath}/lecciones" method="post" class="boton">
+
+        <input type="hidden" name="accion" value="guardar">
+        <input type="hidden" name="id_tema" value="10">
+
+        <input type="hidden"
+               name="descripcion"
+               value="SÃ­mbolos que ayudan a realizar operaciones">
+
+        <button type="submit">
+            HERENCIA
+        </button>
+
+    </form>
+    
+    
     <a href="${pageContext.request.contextPath}/lecciones.jsp" class="boton-fundamentos">
         <span class="texto-boton">REGRESAR</span>
     </a> 
@@ -89,6 +152,5 @@
     <div class="footer">
             Aviso de privacidad | @2025 Cafeína Code
     </div>
-
 </body>
 </html>          

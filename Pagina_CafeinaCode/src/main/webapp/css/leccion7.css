@@ -87,28 +87,7 @@
     width: 55%;
     margin: 10px auto;
 }
-.bloque-codigo1{
-    background-color: buttonface;
-    padding: 5px;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    color: green;
-    display: block;
-    width: 60%;
-    margin: 10px auto;
-}
-.bloque-codigo2{
-    background-color: buttonface;
-    padding: 5px;
-    border-radius: 4px;
-    font-family: 'Courier New', monospace;
-    font-weight: bold;
-    color: green;
-    display: block;
-    width: 55%;
-    margin: 10px auto;
-}
+
 .boton-fundamentos {
     display: block;
     width: 200px;
@@ -159,7 +138,24 @@
     animation: aparecer 0.5s ease forwards,
                desaparecer 0.5s ease 3s forwards;
 }
-
+.bloque-codigo {
+    background-color: #1a1025; 
+    color: #e6d6ff; 
+    padding: 25px 20px;
+    border-radius: 10px;
+    font-family: 'Consolas', 'Courier New', monospace;
+    font-size: 15px;
+    line-height: 1.5;
+    width: 70%;
+    margin: 20px auto;
+    overflow-x: auto;
+    border: 1px solid #4b2a6b;
+    /* sombra suave para efecto “tarjeta” */
+    box-shadow: 0 0 12px rgba(155, 89, 182, 0.25);
+}
+.bloque-codigo code {
+    color: #f0e6ff;
+}
 @keyframes aparecer {
     to {
         opacity: 1;
